@@ -45,9 +45,12 @@ public class Room {
 	/**
 	 * Description of the method roomIDToString.
 	 */
-	public String roomIDToString() {
+	/*public String roomIDToString() {
 		return String.valueOf(this.ID_Room);
 	}
+	
+	* Inutile car juste besoin de récupérer les ID, à prendre directement dans la HashMap dans DB
+	*/ 
 
 	// Start of user code (user defined methods for Room)
 

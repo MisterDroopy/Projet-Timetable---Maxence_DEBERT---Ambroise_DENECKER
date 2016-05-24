@@ -20,7 +20,7 @@ public class TimeTable {
 	
 	protected int ID_Timetable =0;
 	protected Booking ID_Booking;
-	
+
 	// Start of user code (user defined attributes for TimeTable)
 
 	// End of user code

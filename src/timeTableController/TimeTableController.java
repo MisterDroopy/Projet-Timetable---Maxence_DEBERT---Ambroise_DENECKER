@@ -50,6 +50,7 @@ public class TimeTableController implements ITimeTableController {
 
 	@Override
 	public String[] roomsToString() {
+		
 		// TODO Auto-generated method stub
 		return null;
 	}

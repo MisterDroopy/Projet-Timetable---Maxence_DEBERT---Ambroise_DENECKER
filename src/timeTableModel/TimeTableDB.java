@@ -5,7 +5,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -44,7 +47,7 @@ public class TimeTableDB {
 	 * 
 	 */
 	private String file;
-	// TEST COMMIT
+	
 	Map<Integer, TimeTable> TimeTableList = new HashMap<>();
 	Map<Integer, Booking> BookingList = new HashMap<>();
 	Map<Integer, Room> RoomList = new HashMap<>();
@@ -212,8 +215,7 @@ public Room getRoom(int timeTableID, int bookID) {
  * @param TimeTableID 
  */
 public void addTimeTable(int TimeTableID) {
-	// Start of user code for method addTimeTable
-	// End of user code
+	TimeTableList.put(TimeTableID, new TimeTable(TimeTableID));
 }
 
 /**
@@ -221,8 +223,7 @@ public void addTimeTable(int TimeTableID) {
  * @param timeTableID 
  */
 public void removeTimeTableID(int timeTableID) {
-	// Start of user code for method removeTimeTableID
-	// End of user code
+	TimeTableList.remove(timeTableID);
 }
 
 /**
@@ -235,7 +236,8 @@ public void removeTimeTableID(int timeTableID) {
  * @param roomID 
  */
 public void addBooking(int tableTimeID, int bookID, String login, Date dateBegin, Date dateEnd, int roomID) {
-	BookingList.put(bookID, TimeTableList.get(tableTimeID).addBooking(bookID, login, dateBegin, dateEnd, roomID));	
+	//BookingList.put(bookID, TimeTableList.get(tableTimeID).addBooking(bookID, login, dateBegin, dateEnd, roomID));
+	TimeTableList.get(tableTimeID).addBooking(bookID, login, dateBegin, dateEnd, roomID);
 }
 
 
@@ -245,9 +247,11 @@ public void addBooking(int tableTimeID, int bookID, String login, Date dateBegin
  * @param dateBegin 
  * @param dateEnd 
  */
-public void getBookingsDate(int timeTableID, Date dateBegin, Date dateEnd) {
+public void getBookingsDate(int timeTableID,  Hashtable<Integer, Date> dateBegin,  Hashtable<Integer, Date>  dateEnd) {
 	// Start of user code for method getBookingsDate
 	// End of user code
+	TimeTableList.get(timeTableID).getDateBegin(dateBegin);
+	TimeTableList.get(timeTableID).getDateEnd(dateEnd);
 }
 
 /**
@@ -258,40 +262,61 @@ public void getBookingsDate(int timeTableID, Date dateBegin, Date dateEnd) {
 public void removeBook(int timeTableID, int bookID) {
 	// Start of user code for method removeBook
 	// End of user code
+	TimeTableList.get(timeTableID).removeBook(bookID);
 }
 
 /**
  * Description of the method roomsToString.
  */
-public void roomsToString() {
-	// Start of user code for method roomsToString
-	// End of user code
+public String[] roomsToString() {
+	String retour[]; int i=0;
+	Set listKeys=RoomList.keySet();
+	Iterator iterateur = listKeys.iterator();
+	while(iterateur.hasNext())
+	{
+		Object key= iterateur.next();
+		retour[i]=RoomList.get(key).infoToString();
+		i=i+1;
+	}
+	return retour;
 }
 
 /**
  * Description of the method getBookingMaxID.
  * @param timeTableID 
  */
-public void getBookingMaxID(int timeTableID) {
-	// Start of user code for method getBookingMaxID
-	// End of user code
+public int getBookingMaxID(int timeTableID) {
+	int max;
+	max = TimeTableList.get(timeTableID).getBookMaxId();
+	return max;
+	
 }
 
 /**
  * Description of the method booksIDToString.
  * @param timeTableID 
  */
-public void booksIDToString(int timeTableID) {
-	// Start of user code for method booksIDToString
-	// End of user code
+public String[] booksIDToString(int timeTableID) {
+	String retour[];
+	retour=TimeTableList.get(timeTableID).booksIDString();
+	return retour;
+	
 }
 
 /**
  * Description of the method roomsIDToString.
  */
-public void roomsIDToString() {
-	// Start of user code for method roomsIDToString
-	// End of user code
+public String[] roomsIDToString() {
+	String retour[]; int i=0;
+	Set listKeys=RoomList.keySet();
+	Iterator iterateur = listKeys.iterator();
+	while(iterateur.hasNext())
+	{
+		Object key= iterateur.next(); // passe direct au suivant non ?
+		retour[i]=String.valueOf(key);
+		i=i+1;
+	}
+	return retour;
 }
 
 /**
@@ -299,9 +324,9 @@ public void roomsIDToString() {
  * @param timeTableID 
  * @param bookID 
  */
-public void getTeacherLogin(int timeTableID, int bookID) {
-	// Start of user code for method getTeacherLogin
-	// End of user code
+public String getTeacherLogin(int timeTableID, int bookID) {
+	String login = TimeTableList.get(timeTableID).getTeachLogin(bookID);
+	return login;
 }
 
 // Start of user code (user defined methods for TimeTableDB)

@@ -227,9 +227,9 @@ public void removeRoom(int roomID) {
  * @param timeTableID 
  * @param bookID 
  */
-public Room getRoom(int timeTableID, int bookID) {
-	int roomID = TimeTableList.get(timeTableID).getRoom(bookID);
-	return RoomList.get(roomID);
+public int getRoom(int timeTableID, int bookID) {
+	return TimeTableList.get(timeTableID).getRoom(bookID);
+	
 }
 
 /**

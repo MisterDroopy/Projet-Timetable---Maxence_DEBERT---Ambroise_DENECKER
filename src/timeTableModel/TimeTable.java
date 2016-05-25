@@ -54,6 +54,59 @@ public class TimeTable {
 			dateBegin.put(key, BookingList.get(key).getDate_debut());		
 		}
 	}
+	
+	public void getDateEnd(Hashtable<Integer, Date> dateEnd){
+		Set<Integer> listKeys=BookingList.keySet();
+		Iterator<Integer> iterateur= listKeys.iterator();
+		while(iterateur.hasNext())
+		{
+			int key= iterateur.next();
+			dateEnd.put(key, BookingList.get(key).getDate_fin());		
+		}
+	}
+	
+	public void removeBook(int bookID){
+		BookingList.remove(bookID);
+	}
+	
+	public int getBookMaxId(){
+		int max=0;
+		
+		Set<Integer> listKeys=BookingList.keySet();
+		Iterator<Integer> iterateur= listKeys.iterator();
+		while(iterateur.hasNext())
+		{
+			int key= iterateur.next();
+			if(key>max){
+				max=key;
+			}		
+		}
+		
+		return max;
+	}
+	
+	public String[] booksIDString(){
+		String retour[]=new String[100]; int i=0;
+		Set<Integer> listKeys=BookingList.keySet();
+		Iterator<Integer> iterateur = listKeys.iterator();
+		while(iterateur.hasNext())
+		{
+			int key= iterateur.next(); // passe direct au suivant non ?
+			retour[i]=String.valueOf(key);
+			i=i+1;
+		}
+		return retour;
+		
+	}
+	
+	public String getTeachLogin(int bookId){
+		String login;
+		login= BookingList.get(bookId).getTeacherLogin();
+		
+		return login;
+	}
+	
+	
 /*	public void getTeacherID (int BookID){
 		((Booking)BookID).getTeacherLogin();
 	}*/

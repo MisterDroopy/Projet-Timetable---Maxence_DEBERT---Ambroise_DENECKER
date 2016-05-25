@@ -39,7 +39,7 @@ public class Room {
 	 * Description of the method infoToString.
 	 */
 	public String infoToString() {
-		return (String.valueOf(this.ID_Room)+ ":"+ String.valueOf(this.capacity));
+		return (String.valueOf(this.ID_Room)+ " : "+ String.valueOf(this.capacity));
 	}
 
 	/**

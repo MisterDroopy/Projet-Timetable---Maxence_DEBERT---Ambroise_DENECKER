@@ -20,9 +20,8 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import main.java.timeTableModel.HashSet;
-import main.java.timeTableModel.Room;
-import main.java.timeTableModel.TimeTable;
+import timeTableModel.Room;
+import timeTableModel.TimeTable;
 
 
 
@@ -175,9 +174,26 @@ public class TimeTableDB {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Description of the method saveDB.
+	 */
+public void saveDB() {
+		// Start of user code for method saveDB
+		// End of user code
+	}
 
+	/**
+	 * Description of the method loadDB.
+	 */
+public void loadDB() {
+		// Start of user code for method loadDB
+		// End of user code
+	}
+	
+	
+	
 public String[] timeTableIDToString() {
-	String retour[]; int i=0;
+	String retour[]=new String[100]; int i=0;
 	Set<Integer> listKeys=TimeTableList.keySet();
 	Iterator<Integer> iterateur = listKeys.iterator();
 	while(iterateur.hasNext())
@@ -192,10 +208,9 @@ public String[] timeTableIDToString() {
 /**
  * Description of the method addRoom.
  * @param roomID 
- * @param capacity 
+ * @param capacity
  */
 public void addRoom(int roomID, int capacity) {
-	//Room nom_room = new Room(roomID, capacity); 
 	RoomList.put(roomID, new Room(roomID, capacity) );
 }
 
@@ -265,8 +280,6 @@ public void getBookingsDate(int timeTableID,  Hashtable<Integer, Date> dateBegin
  * @param bookID 
  */
 public void removeBook(int timeTableID, int bookID) {
-	// Start of user code for method removeBook
-	// End of user code
 	TimeTableList.get(timeTableID).removeBook(bookID);
 }
 
@@ -274,7 +287,7 @@ public void removeBook(int timeTableID, int bookID) {
  * Description of the method roomsToString.
  */
 public String[] roomsToString() {
-	String retour[]; int i=0;
+	String retour[]= new String[100]; int i=0;
 	Set<Integer> listKeys=RoomList.keySet();
 	Iterator<Integer> iterateur = listKeys.iterator();
 	while(iterateur.hasNext())
@@ -312,7 +325,7 @@ public String[] booksIDToString(int timeTableID) {
  * Description of the method roomsIDToString.
  */
 public String[] roomsIDToString() {
-	String retour[]; int i=0;
+	String retour[]=new String[100]; int i=0;
 	Set<Integer> listKeys=RoomList.keySet();
 	Iterator<Integer> iterateur = listKeys.iterator();
 	while(iterateur.hasNext())
@@ -334,40 +347,22 @@ public String getTeacherLogin(int timeTableID, int bookID) {
 	return login;
 }
 
-// Start of user code (user defined methods for TimeTableDB)
 
-// End of user code
-/**
- * Returns file.
- * @return file 
- */
-public Object getFile() {
-	return this.file;
-}
-
-/**
- * Sets a value to attribute file. 
- * @param newFile 
- */
-public void setFile(Object newFile) {
-	this.file = newFile;
-}
-
-/**
- * Returns rooms.
- * @return rooms 
- */
-public HashSet<Room> getRooms() {
-	return this.rooms;
-}
-
-/**
- * Returns timeTables.
- * @return timeTables 
- */
-public HashSet<TimeTable> getTimeTables() {
-	return this.timeTables;
-}
+///**
+// * Returns rooms.
+// * @return rooms 
+// */
+//public HashSet<Room> getRooms() {
+//	return this.rooms;
+//}
+//
+///**
+// * Returns timeTables.
+// * @return timeTables 
+// */
+//public HashSet<TimeTable> getTimeTables() {
+//	return this.timeTables;
+//}
 
 }
 

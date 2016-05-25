@@ -66,8 +66,6 @@ Date datee4 = dend4.getTime();
 		NotreDB.addTimeTable(1); //test addTimeTable
 		
 		NotreDB.addRoom(1, 10);
-		NotreDB.addBooking(1, 1, "maxence", dated3, datee3, 1);
-		System.out.println("Login :" + NotreDB.getTeacherLogin(1,1));
 		NotreDB.addBooking(1, 2, "ambroise", dated4, datee4, 1);
 		String books[] = new String[100];
 		books=NotreDB.booksIDToString(1);
@@ -78,7 +76,8 @@ Date datee4 = dend4.getTime();
 		}
 		System.out.println("------------------");
 		
-		NotreDB.addBooking(1, 3, "casimir", dated2, datee2, 1);
+		NotreDB.addBooking(1, 2, "casimir", dated2, datee2, 1);
+		System.out.println(NotreDB.getTeacherLogin(1, 2));
 		books=NotreDB.booksIDToString(1);
 		for(i=0; i<100;i++){
 			System.out.println(books[i]);

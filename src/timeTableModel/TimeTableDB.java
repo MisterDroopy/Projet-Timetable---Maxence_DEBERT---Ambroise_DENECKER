@@ -3,6 +3,8 @@ package timeTableModel;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -68,12 +70,7 @@ public class TimeTableDB {
 //		     */
 //		    final Document document= builder.parse(new File("repertoire.xml"));
 //				
-//		    //Affiche du prologue
-//		    System.out.println("*************PROLOGUE************");
-//		    System.out.println("version : " + document.getXmlVersion());
-//		    System.out.println("encodage : " + document.getXmlEncoding());		
-//	            System.out.println("standalone : " + document.getXmlStandalone());
-//						
+//		   
 //		    /*
 //		     * Etape 4 : récupération de l'Element racine
 //		     */
@@ -186,11 +183,99 @@ public void saveDB() {
 	 * Description of the method loadDB.
 	 */
 public void loadDB() {
-		// Start of user code for method loadDB
-		// End of user code
-	}
+			
+	File xmlFile = new File(this.file);
 	
 	
+	/*
+     * Etape 1 : récupération d'une instance de la classe "DocumentBuilderFactory"
+     */
+    final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        
+    
+    
+    try {
+        /*
+         * Etape 2 : création d'un parseur
+         */
+        final DocumentBuilder builder = factory.newDocumentBuilder();
+		
+    /*
+     * Etape 3 : création d'un Document
+     */
+        final Document document= builder.parse(xmlFile);
+		
+    /*
+	 * Etape 4 : récupération de l'Element racine
+	 */
+	    final Element racine = document.getDocumentElement(); 
+	    
+        
+        
+        
+	    /*
+	     * Etape 5 : récupération des personnes
+	     */
+	    final NodeList NoeudsRoom = document.getElementsByTagName("Room");
+	    final int nbNoeudsRoom = NoeudsRoom.getLength();
+			
+	    for (int i = 0; i<nbNoeudsRoom; i++) {
+	    	
+	    	Node noeud = NoeudsRoom.item(i);
+	        if(noeud.getNodeType() == Node.ELEMENT_NODE) {
+	            final Element room = (Element) noeud;
+	            this.addRoom(Integer.parseInt(room.getAttribute("RoomId")),Integer.parseInt(room.getAttribute("Capacity")));
+			}
+	    
+	    }
+	    
+	    
+	    final NodeList NoeudsTimeTable = document.getElementsByTagName("TimeTable");
+	    final int nbNoeudsTimeTable = NoeudsTimeTable.getLength();
+	    
+	    for(int i=0; i<nbNoeudsTimeTable;i++){//for1
+	    	Node noeud = NoeudsTimeTable.item(i);
+	    	if(noeud.getNodeType() == Node.ELEMENT_NODE) {//if1
+	    		final Element timetable = (Element) noeud;
+	    		this.addTimeTable(Integer.parseInt(timetable.getAttribute("GroupId")));
+	    		
+	    		 final NodeList NoeudsBook = document.getElementsByTagName("Book");
+	    		 final int nbNoeudsBook = NoeudsBook.getLength();
+	    		 for(int j=0; j<nbNoeudsBook; j++){//for2
+	    			 Node noeud2 = NoeudsBook.item(j);
+	    			 if(noeud2.getNodeType()==Node.ELEMENT_NODE){//if2
+	    				 final Element book = (Element) noeud2;
+	    				 this.addBooking(Integer.parseInt(timetable.getAttribute("GroupId")), Integer.parseInt(book.getAttribute("BookingId")), book.getAttribute("Login"), this.StringToDate(book.getAttribute("DateBegin")), this.StringToDate(book.getAttribute("DateEnd")), Integer.parseInt(book.getAttribute("RoomId")));
+	    			 }//fin if2
+	    		 }//fin for2
+	    	}//fin if1
+	    	
+	    
+	    }//fin for1
+	    }//fin try
+    catch (Exception e){//catch
+    	e.printStackTrace();
+    }//fin catch
+}//fin loadDB
+	
+
+
+
+public Date StringToDate(String date){
+SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+Date fdate=null; // pas sur...
+try {
+	fdate = formatter.parse(date);
+	return fdate;
+}
+catch(ParseException e) {
+	e.printStackTrace();
+}
+return fdate;	
+}
+
+
+
 	
 public String[] timeTableIDToString() {
 	String retour[]=new String[100]; int i=0;

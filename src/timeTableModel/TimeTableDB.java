@@ -49,7 +49,6 @@ public class TimeTableDB {
 	private String file;
 	
 	Map<Integer, TimeTable> TimeTableList = new HashMap<>();
-	Map<Integer, Booking> BookingList = new HashMap<>();
 	Map<Integer, Room> RoomList = new HashMap<>();
 
 	
@@ -173,13 +172,21 @@ public class TimeTableDB {
 	public void setFile(String file) {
 		this.file = file;
 	}
-}
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-public void timeTableIDToString() {
-	// Start of user code for method timeTableIDToString
-	// End of user code
+public String[] timeTableIDToString() {
+	String retour[]; int i=0;
+	Set<Integer> listKeys=TimeTableList.keySet();
+	Iterator<Integer> iterateur = listKeys.iterator();
+	while(iterateur.hasNext())
+	{
+		int key= iterateur.next(); // passe direct au suivant non ?
+		retour[i]=String.valueOf(key);
+		i=i+1;
+	}
+	return retour;
 }
 
 /**
@@ -236,7 +243,7 @@ public void removeTimeTableID(int timeTableID) {
  * @param roomID 
  */
 public void addBooking(int tableTimeID, int bookID, String login, Date dateBegin, Date dateEnd, int roomID) {
-	//BookingList.put(bookID, TimeTableList.get(tableTimeID).addBooking(bookID, login, dateBegin, dateEnd, roomID));
+	
 	TimeTableList.get(tableTimeID).addBooking(bookID, login, dateBegin, dateEnd, roomID);
 }
 
@@ -248,8 +255,6 @@ public void addBooking(int tableTimeID, int bookID, String login, Date dateBegin
  * @param dateEnd 
  */
 public void getBookingsDate(int timeTableID,  Hashtable<Integer, Date> dateBegin,  Hashtable<Integer, Date>  dateEnd) {
-	// Start of user code for method getBookingsDate
-	// End of user code
 	TimeTableList.get(timeTableID).getDateBegin(dateBegin);
 	TimeTableList.get(timeTableID).getDateEnd(dateEnd);
 }
@@ -270,11 +275,11 @@ public void removeBook(int timeTableID, int bookID) {
  */
 public String[] roomsToString() {
 	String retour[]; int i=0;
-	Set listKeys=RoomList.keySet();
-	Iterator iterateur = listKeys.iterator();
+	Set<Integer> listKeys=RoomList.keySet();
+	Iterator<Integer> iterateur = listKeys.iterator();
 	while(iterateur.hasNext())
 	{
-		Object key= iterateur.next();
+		int key= iterateur.next();
 		retour[i]=RoomList.get(key).infoToString();
 		i=i+1;
 	}
@@ -308,11 +313,11 @@ public String[] booksIDToString(int timeTableID) {
  */
 public String[] roomsIDToString() {
 	String retour[]; int i=0;
-	Set listKeys=RoomList.keySet();
-	Iterator iterateur = listKeys.iterator();
+	Set<Integer> listKeys=RoomList.keySet();
+	Iterator<Integer> iterateur = listKeys.iterator();
 	while(iterateur.hasNext())
 	{
-		Object key= iterateur.next(); // passe direct au suivant non ?
+		int key= iterateur.next(); // passe direct au suivant non ?
 		retour[i]=String.valueOf(key);
 		i=i+1;
 	}

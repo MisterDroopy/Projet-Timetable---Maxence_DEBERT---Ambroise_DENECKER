@@ -41,8 +41,21 @@ public class TimeTable {
 	return id;	
 	}
 	
-	public void addBooking(int bookID, String login, Date dateBegin, Date dateEnd, int roomID){
+	public boolean addBooking(int bookID, String login, Date dateBegin, Date dateEnd, int roomID){
+		
+		if(BookingList.containsKey(bookID)){
+			
+			return false;
+		}
 		BookingList.put(bookID, new Booking(bookID,roomID,login, dateBegin, dateEnd));
+		if(BookingList.containsKey(bookID)){
+			
+			return true;
+		}
+		else {
+			return false;
+		}
+		
 	}
 	
 	public void getDateBegin(Hashtable<Integer, Date> dateBegin){
@@ -65,8 +78,20 @@ public class TimeTable {
 		}
 	}
 	
-	public void removeBook(int bookID){
-		BookingList.remove(bookID);
+	public boolean removeBook(int bookID){
+		if(BookingList.containsKey(bookID)){
+			
+			BookingList.remove(bookID);	
+			if(BookingList.containsKey(bookID)){
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
+		else {
+			return false;
+		}
 	}
 	
 	public int getBookMaxId(){

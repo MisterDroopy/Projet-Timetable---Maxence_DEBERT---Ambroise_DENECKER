@@ -47,7 +47,7 @@ public class TimeTableDB {
 	 * Le fichier contenant la base de données.
 	 * 
 	 */
-	private String file;
+	private String file = "timeTableDB.xml";
 	
 	Map<Integer, TimeTable> TimeTableList = new HashMap<>();
 	Map<Integer, Room> RoomList = new HashMap<>();
@@ -182,7 +182,7 @@ public void saveDB() {
 	/**
 	 * Description of the method loadDB.
 	 */
-public void loadDB() {
+public boolean loadDB() {
 			
 	File xmlFile = new File(this.file);
 	
@@ -252,10 +252,13 @@ public void loadDB() {
 	    	
 	    
 	    }//fin for1
+	    
 	    }//fin try
     catch (Exception e){//catch
     	e.printStackTrace();
+    	return false;
     }//fin catch
+    return true;
 }//fin loadDB
 	
 
@@ -295,16 +298,41 @@ public String[] timeTableIDToString() {
  * @param roomID 
  * @param capacity
  */
-public void addRoom(int roomID, int capacity) {
+public boolean addRoom(int roomID, int capacity) {
+	
+	if(RoomList.containsKey(roomID)){
+		
+		return false;
+	}
 	RoomList.put(roomID, new Room(roomID, capacity) );
+	if(RoomList.containsKey(roomID)){
+		
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 /**
  * Description of the method removeRoom.
  * @param roomID 
  */
-public void removeRoom(int roomID) {
-	RoomList.remove(roomID);
+public boolean removeRoom(int roomID) {
+	
+	if(RoomList.containsKey(roomID)){
+	
+		RoomList.remove(roomID);	
+		if(RoomList.containsKey(roomID)){
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+	else {
+		return false;
+	}
 }
 
 /**
@@ -321,16 +349,41 @@ public int getRoom(int timeTableID, int bookID) {
  * Description of the method addTimeTable.
  * @param TimeTableID 
  */
-public void addTimeTable(int TimeTableID) {
-	TimeTableList.put(TimeTableID, new TimeTable(TimeTableID));
+public boolean addTimeTable(int TimeTableID) {
+	
+	if(TimeTableList.containsKey(TimeTableID)){
+		
+		return false;
+	}
+	TimeTableList.put(TimeTableID, new TimeTable(TimeTableID) );
+	if(TimeTableList.containsKey(TimeTableID)){
+		
+		return true;
+	}
+	else {
+		return false;
+	}
+	
 }
 
 /**
  * Description of the method removeTimeTableID.
  * @param timeTableID 
  */
-public void removeTimeTableID(int timeTableID) {
-	TimeTableList.remove(timeTableID);
+public boolean removeTimeTableID(int timeTableID) {
+	if(TimeTableList.containsKey(timeTableID)){
+		
+		TimeTableList.remove(timeTableID);	
+		if(TimeTableList.containsKey(timeTableID)){
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+	else {
+		return false;
+	}
 }
 
 /**
@@ -342,9 +395,9 @@ public void removeTimeTableID(int timeTableID) {
  * @param dateEnd 
  * @param roomID 
  */
-public void addBooking(int tableTimeID, int bookID, String login, Date dateBegin, Date dateEnd, int roomID) {
+public boolean addBooking(int tableTimeID, int bookID, String login, Date dateBegin, Date dateEnd, int roomID) {
 	
-	TimeTableList.get(tableTimeID).addBooking(bookID, login, dateBegin, dateEnd, roomID);
+	return TimeTableList.get(tableTimeID).addBooking(bookID, login, dateBegin, dateEnd, roomID);
 }
 
 
@@ -364,8 +417,8 @@ public void getBookingsDate(int timeTableID,  Hashtable<Integer, Date> dateBegin
  * @param timeTableID 
  * @param bookID 
  */
-public void removeBook(int timeTableID, int bookID) {
-	TimeTableList.get(timeTableID).removeBook(bookID);
+public boolean removeBook(int timeTableID, int bookID) {
+	return TimeTableList.get(timeTableID).removeBook(bookID);
 }
 
 /**

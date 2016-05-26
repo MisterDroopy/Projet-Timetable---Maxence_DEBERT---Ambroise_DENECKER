@@ -38,87 +38,77 @@ public class TimeTableController implements ITimeTableController {
 
 	@Override
 	public String getTeacherLogin(int timeTableId, int bookId) {
-		// TODO Auto-generated method stub
-		return null;
+		return tTDB.getTeacherLogin(timeTableId, bookId);
+		
 	}
 
 	@Override
 	public String[] roomsIdToString() {
-		// TODO Auto-generated method stub
-		return null;
+		return tTDB.roomsIDToString();
+		
 	}
 
 	@Override
 	public String[] roomsToString() {
+		return tTDB.roomsToString();
 		
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
 	public String[] timeTablesIDToString() {
-		// TODO Auto-generated method stub
-		return null;
+		return tTDB.timeTableIDToString();
+		
 	}
 
 	@Override
 	public String[] booksIdToString(int timeTableId) {
-		// TODO Auto-generated method stub
-		return null;
+		return tTDB.booksIDToString(timeTableId);
 	}
 
 	@Override
 	public boolean addRoom(int roomId, int capacity) {
-		// TODO Auto-generated method stub
-		return false;
+		return tTDB.addRoom(roomId, capacity);
+		
 	}
 
 	@Override
 	public boolean removeRoom(int roomId) {
-		// TODO Auto-generated method stub
-		return false;
+		return tTDB.removeRoom(roomId);
 	}
 
 	@Override
 	public int getRoom(int timeTableId, int bookId) {
-		// TODO Auto-generated method stub
-		return 0;
+		return tTDB.getRoom(timeTableId, bookId);
 	}
 
 	@Override
 	public boolean addTimeTable(int timeTableId) {
-		// TODO Auto-generated method stub
-		return false;
+		return tTDB.addTimeTable(timeTableId);
 	}
 
 	@Override
 	public boolean removeTimeTable(int timeTableId) {
-		// TODO Auto-generated method stub
-		return false;
+		return tTDB.removeTimeTableID(timeTableId);
 	}
 
 	@Override
 	public boolean addBooking(int timeTableId, int bookingId, String login, Date dateBegin, Date dateEnd, int roomId) {
-		// TODO Auto-generated method stub
-		return false;
+		return tTDB.addBooking(timeTableId, bookingId, login, dateBegin, dateEnd, roomId);
 	}
 
 	@Override
 	public void getBookingsDate(int timeTableId, Hashtable<Integer, Date> dateBegin, Hashtable<Integer, Date> dateEnd) {
-		// TODO Auto-generated method stub
-
+		tTDB.getBookingsDate(timeTableId, dateBegin, dateEnd);
 	}
 
 	@Override
 	public boolean removeBook(int timeTableId, int bookId) {
-		// TODO Auto-generated method stub
-		return false;
+		return tTDB.removeBook(timeTableId,bookId);
 	}
 
 	@Override
 	public int getBookingsMaxId(int timeTableId) {
-		// TODO Auto-generated method stub
-		return 0;
+		return tTDB.getBookingMaxID(timeTableId);
 	}
 
 	@Override

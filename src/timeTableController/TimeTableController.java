@@ -34,6 +34,7 @@ public class TimeTableController implements ITimeTableController {
 	public TimeTableController(String tTfile) {
 		TimeTableDB tTDB = new TimeTableDB(tTfile);
 		this.tTDB = tTDB;
+		tTDB.loadDB();
 	}
 
 	@Override
@@ -109,6 +110,7 @@ public class TimeTableController implements ITimeTableController {
 	@Override
 	public int getBookingsMaxId(int timeTableId) {
 		return tTDB.getBookingMaxID(timeTableId);
+		
 	}
 
 	@Override
@@ -119,8 +121,10 @@ public class TimeTableController implements ITimeTableController {
 
 	@Override
 	public boolean loadDB() {
-		// TODO Auto-generated method stub
-		return false;
+		System.out.println("entree load controller");
+
+		return tTDB.loadDB();
+		
 	}
 
 }

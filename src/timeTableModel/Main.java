@@ -27,17 +27,19 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 
-//		final String file = "timeTableDB.xml";
-//		TimeTableController UC = new TimeTableController(file);
-//		UC.addRoom(1, 50);
-//		UC.addRoom(2, 100);
-//		UC.addRoom(3, 150);
-//
-//		Calendar dbeg1 = new GregorianCalendar(2016, 3, 6, 8, 00);
-//		Calendar dend1 = new GregorianCalendar(2016, 3, 6, 10, 00);
-//		Date dated1 = dbeg1.getTime();
-//		Date datee1 = dend1.getTime();
-//
+		final String file = "timeTableDB.xml";
+		
+		TimeTableController UC = new TimeTableController(file);
+		UC.loadDB();
+		UC.addRoom(1, 50);
+		UC.addRoom(2, 100);
+		UC.addRoom(3, 150);
+
+		Calendar dbeg1 = new GregorianCalendar(2016, 3, 6, 8, 00);
+		Calendar dend1 = new GregorianCalendar(2016, 3, 6, 10, 00);
+		Date dated1 = dbeg1.getTime();
+		Date datee1 = dend1.getTime();
+
 		Calendar dbeg2 = new GregorianCalendar(2016, 3, 6, 13, 00);
 		Calendar dend2 = new GregorianCalendar(2016, 3, 6, 17, 00);
 	Date dated2 = dbeg2.getTime();
@@ -52,13 +54,13 @@ Calendar dbeg4 = new GregorianCalendar(2016, 3, 8, 16, 00);
 Calendar dend4 = new GregorianCalendar(2016, 3, 8, 18, 00);
 Date dated4 = dbeg4.getTime();
 Date datee4 = dend4.getTime();
-//
-//		UC.addTimeTable(1);
-//		UC.addBooking(1, 0, "GS", dated1, datee1, 1);
-//		UC.addBooking(1, 1, "MF", dated2, datee2, 1);
-//		UC.addBooking(1, 2, "GS", dated3, datee3, 2);
-//		UC.addBooking(1, 3, "MF", dated4, datee4, 3);
-//		UC.saveDB();
+
+		UC.addTimeTable(1);
+		UC.addBooking(1, 0, "GS", dated1, datee1, 1);
+		UC.addBooking(1, 1, "MF", dated2, datee2, 1);
+		UC.addBooking(1, 2, "GS", dated3, datee3, 2);
+		UC.addBooking(1, 3, "MF", dated4, datee4, 3);
+		UC.saveDB();
 		
 		
 		TimeTableDB NotreDB = new TimeTableDB("ok");

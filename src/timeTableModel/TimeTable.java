@@ -43,19 +43,19 @@ public class TimeTable {
 	
 	public boolean addBooking(int bookID, String login, Date dateBegin, Date dateEnd, int roomID){
 		
-		if(BookingList.containsKey(bookID)){
+		//if(BookingList.containsKey(bookID)){
 			
-			return false;
-		}
+			//return false;
+		//}
 		BookingList.put(bookID, new Booking(bookID,roomID,login, dateBegin, dateEnd));
-		if(BookingList.containsKey(bookID)){
-			
+//		if(BookingList.containsKey(bookID)){
+//			
 			return true;
-		}
-		else {
-			return false;
-		}
-		
+//		}
+//		else {
+//			return false;
+//		}
+//		
 	}
 	
 	public void getDateBegin(Hashtable<Integer, Date> dateBegin){
@@ -107,7 +107,7 @@ public class TimeTable {
 			}		
 		}
 		
-		return max;
+		return max+1;
 	}
 	
 	public String[] booksIDString(){

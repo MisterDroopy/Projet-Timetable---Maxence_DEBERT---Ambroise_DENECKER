@@ -38,6 +38,13 @@
       <pwd>iknowall</pwd>
       <teacherId>1002</teacherId>
     </Teacher>
+    <Teacher>
+      <login>mdebert</login>
+      <firstname>Maxence</firstname>
+      <surname>Debert</surname>
+      <pwd>teacher</pwd>
+      <teacherId>1003</teacherId>
+    </Teacher>
   </Teachers>
   <Administrators>
     <Administrator>

@@ -182,8 +182,41 @@ public class TimeTableDB {
 	 * Description of the method saveDB.
 	 */
 public void saveDB() {
-		// Start of user code for method saveDB
-		// End of user code
+	Set<Integer> listKeysTimeTable=TimeTableList.keySet();
+	Set<Integer> listKeysRoom=RoomList.keySet();
+	SAXBuilder sax = new SAXBuilder();
+	Document document = null;
+	
+	Element racine = new Element ("TImeTablesDB");
+	Element racine_timetables = new Element ("TimeTables");
+	Element racine_rooms = new Element ("Rooms");
+	racine.addContent((Content)racine_timetables);
+	racine.addContent((Content)racine_rooms);
+	
+	try {
+		document= sax.build(new File(this.file));
+		
+	} catch (Exception v0) {}
+	
+	if (document !=null){
+	Iterator<Integer> iterateur_timetables = listKeysTimeTable.iterator();
+		while(iterateur_timetables.hasNext()){
+			String cle = String.valueOf(iterateur_timetables.next());
+			Element timetable = new Element ("TimeTable");
+			Element groupId = new Element ("GroupId");
+			groupId.setText(cle);
+			timetable.addContent((Content)groupId);
+			// set... listbooks = fonction
+			// racine books
+			// timetable.addContent(racine books)
+			// while iterator (listbooks)
+			// refaire pareil que ligne 204
+			
+			racine_timetables.addContent((Content)timetable);
+			
+		}
+		
+	}
 	}
 
 	/**

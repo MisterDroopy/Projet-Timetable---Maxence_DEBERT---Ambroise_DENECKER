@@ -206,16 +206,37 @@ public void saveDB() {
 			Element groupId = new Element ("GroupId");
 			groupId.setText(cle);
 			timetable.addContent((Content)groupId);
-			// set... listbooks = fonction
-			// racine books
-			// timetable.addContent(racine books)
-			// while iterator (listbooks)
+			Set <Integer> listKeysBooking = TimeTableList.get(Integer.parseInt(cle)).bookingTable().keySet();// set... listbooks = fonction
+			Element racine_books = new Element ("Books");// racine books
+			timetable.addContent((Content)racine_books);// timetable.addContent(racine books)
+			Iterator<Integer> iterateur_books = listKeysBooking.iterator();
+			while(iterateur_books.hasNext()){
+				
+				String clebook = String.valueOf(iterateur_books.next());
+				Element book = new Element ("Book");
+				Element bookId = new Element ("BookingId");
+				bookId.setText(clebook);
+				book.addContent((Content)bookId);
+				Element login = new Element ("Login");
+				Element dateDebut = new Element ("DateBegin");
+				Element dateFin = new Element ("DateEnd");
+				Element roomId = new Element ("RoomId");
+				login.setText(TimeTableList.get(Integer.parseInt(cle)).getTeachLogin(Integer.parseInt(clebook)));
+				book.addContent((Content)login);
+				dateDebut.setText(TimeTableList.get(Integer.parseInt(cle)).getDateDebu(Integer.parseInt(clebook)));
+				book.addContent((Content)dateDebut); 
+				dateFin.setText(TimeTableList.get(Integer.parseInt(cle)).getDateFi(Integer.parseInt(clebook)));
+				book.addContent((Content)dateFin);
+				roomId.setText(String.valueOf(TimeTableList.get(Integer.parseInt(cle)).getRoom(Integer.parseInt(clebook))));
+				book.addContent((Content)roomId);
+				
+			}
 			// refaire pareil que ligne 204
 			
 			racine_timetables.addContent((Content)timetable);
 			
 		}
-		
+	// ICI Iterator... ListKeysRoom... Refaire pareil mais en moins dur promis ;)	
 	}
 	}
 

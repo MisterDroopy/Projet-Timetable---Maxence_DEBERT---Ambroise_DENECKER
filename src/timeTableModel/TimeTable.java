@@ -131,7 +131,18 @@ public class TimeTable {
 		return login;
 	}
 	
+	public String getDateDebu (int bookId){
+		return String.valueOf(BookingList.get(bookId).getDate_debut());
+	}
 	
+	public String getDateFi (int bookId){
+		return String.valueOf(BookingList.get(bookId).getDate_fin());
+	}
+	
+	public Map<Integer, Booking> bookingTable() {
+		return BookingList;
+		
+	}	
 /*	public void getTeacherID (int BookID){
 		((Booking)BookID).getTeacherLogin();
 	}*/

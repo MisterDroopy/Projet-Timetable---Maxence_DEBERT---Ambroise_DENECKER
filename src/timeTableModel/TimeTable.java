@@ -31,6 +31,9 @@ public class TimeTable {
 
 	/**
 	 * Le constructeur créant l'emploi du temps
+	 * 
+	 *  @param ID_Timetable
+	 *  	numéro d'identification de l'emploi du temps
 	 */
 	public TimeTable(int ID_Timetable) {
 		this.ID_Timetable = ID_Timetable;
@@ -41,7 +44,7 @@ public class TimeTable {
 	 * Retourne le numéro d'identification de la salle
 	 * 
 	 * @param bookID
-	 * 		le numéro d'identication de la réservation
+	 * 		le numéro d'identification de la réservation
 	 * 
 	 * @return le numéro d'identification de la salle
 	 */
@@ -66,11 +69,20 @@ public class TimeTable {
 	 * @param roomID
 	 * 		le numéro de la salle
 	 * 
-	 * @return A completer
+	 * @return
+	 * 		Vrai si ajoutée
+	 * 		Faux sinon
 	 */
 	public boolean addBooking(int bookID, String login, Date dateBegin, Date dateEnd, int roomID) {
+		if (BookingList.containsKey(bookID)) {
+			return false;
+		}
 		BookingList.put(bookID, new Booking(bookID, roomID, login, dateBegin, dateEnd));
-		return true;
+		if (BookingList.containsKey(bookID)) {
+			return true;
+		} else {
+			return false;
+		}
 		
 	}
 

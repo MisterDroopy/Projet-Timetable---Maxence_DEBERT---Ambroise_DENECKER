@@ -120,8 +120,7 @@ public class TimeTableController implements ITimeTableController {
 
 	@Override
 	public boolean loadDB() {
-		System.out.println("entree load controller");
-
+		
 		return tTDB.loadDB();
 		
 	}

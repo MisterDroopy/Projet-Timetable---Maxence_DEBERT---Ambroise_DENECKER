@@ -26,10 +26,10 @@ public class Room {
 
 
 	/**
-	 * Constructeur de la salle créant la salle associé à une capacité.
+	 * Constructeur de la salle créant la salle associée à une capacité.
 	 * 
-	 * @param ID_Rooom
-	 * 		Numéro de d'identification de la salle
+	 * @param ID_Room
+	 * 		Numéro d'identification de la salle
 	 * @param capacity
 	 * 		Capacité de la salle
 	 */

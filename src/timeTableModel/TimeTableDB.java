@@ -104,34 +104,42 @@ public class TimeTableDB {
 	 * 		A COMPLETER
 	 */
 	public boolean saveDB() {
-		System.out.println("Entrée saveDB");
+		//on stocke l'ensemble des IDs de nos différentes tables dans des listes
 		Set<Integer> listKeysTimeTable = TimeTableList.keySet();
 		Set<Integer> listKeysRoom = RoomList.keySet();
 		SAXBuilder sax = new SAXBuilder();
 		Document document = null;
+		// on crée les éléments "racine" de notre base de données
 		Element racine = new Element("TImeTablesDB");
 		Element racine_timetables = new Element("TimeTables");
 		Element racine_rooms = new Element("Rooms");
+		// on ajoute les racines secondaires à la racine principale
 		racine.addContent((Content) racine_timetables);
 		racine.addContent((Content) racine_rooms);
 		try {
 			document = sax.build(new File(this.file));
 
 		} catch (Exception v0) {
+			return false;
 		}
 		if (document != null) {
 			Iterator<Integer> iterateur_timetables = listKeysTimeTable.iterator();
+			// on parcourt la liste des emplois du temps
 			while (iterateur_timetables.hasNext()) {
 				String cle = String.valueOf(iterateur_timetables.next());
+				// à chaque emploi du temps, on crée un nouvel élément et on y ajoute un élément correspondant à l'identifiant
 				Element timetable = new Element("TimeTable");
 				Element groupId = new Element("GroupId");
 				groupId.setText(cle);
 				timetable.addContent((Content) groupId);
+				//on stocke les IDs des réservations de l'emploi du temps en question dans une liste
 				Set<Integer> listKeysBooking = TimeTableList.get(Integer.parseInt(cle)).bookingTable().keySet();
 				Element racine_books = new Element("Books");
 				timetable.addContent((Content) racine_books);
+				// on parcourt la liste des réservations
 				Iterator<Integer> iterateur_books = listKeysBooking.iterator();
 				while (iterateur_books.hasNext()) {
+					// à chaque réservation, on crée un nouvel élément et on y ajoute les différents éléments correspondant à l'identifiant, le nom du prof, les dates et la salle
 					String clebook = String.valueOf(iterateur_books.next());
 					Element book = new Element("Book");
 					Element bookId = new Element("BookingId");
@@ -147,13 +155,14 @@ public class TimeTableDB {
 					book.addContent((Content) dateDebut);
 					dateFin.setText(TimeTableList.get(Integer.parseInt(cle)).getDateFi(Integer.parseInt(clebook)));
 					book.addContent((Content) dateFin);
-					roomId.setText(String
-							.valueOf(TimeTableList.get(Integer.parseInt(cle)).getRoom(Integer.parseInt(clebook))));
+					roomId.setText(String.valueOf(TimeTableList.get(Integer.parseInt(cle)).getRoom(Integer.parseInt(clebook))));
 					book.addContent((Content) roomId);
 					racine_books.addContent((Content) book);
 				}
+				// on associe les emplois du temps à la racine correspondante
 				racine_timetables.addContent((Content) timetable);
 			}
+			//on reproduit le même principe pour les salles
 			Iterator<Integer> iterateur_rooms = listKeysRoom.iterator();
 			while (iterateur_rooms.hasNext()) {
 				String cleroom = String.valueOf(iterateur_rooms.next());
@@ -166,6 +175,7 @@ public class TimeTableDB {
 				room.addContent((Content) capacity);
 				racine_rooms.addContent((Content) room);
 			}
+			// on associe la racine principale au document et on génère le XML
 			document.setRootElement(racine);
 			try {
 				XMLOutputter object = new XMLOutputter(Format.getPrettyFormat());
@@ -186,12 +196,12 @@ public class TimeTableDB {
 	 * 		A COMPLETER
 	 */
 	public boolean loadDB() {
-		System.out.println("Entrée load");
 
 		SAXBuilder sxb = new SAXBuilder();
 		try {
 			document = sxb.build(new File(this.file));
 		} catch (Exception e) {
+			return false;
 		}
 		racine = document.getRootElement();
 		Load_Rooms(racine);
@@ -209,8 +219,10 @@ public class TimeTableDB {
 	public void Load_Rooms(Element racine) {
 		String id, capacity;
 		Element racine2 = racine.getChild("Rooms");
+		//on récupère dans une liste l'ensemble des "Room"
 		List<Element> room = racine2.getChildren("Room");
 		int i;
+		// on parcourt la liste en récupérant les IDs et capacités des salles, et on crée une salle avec ces propriétés
 		for (i = 0; i < room.size(); i++) {
 			List<Element> room1 = room.get(i).getChildren();
 			id = room1.get(0).getText();
@@ -229,14 +241,18 @@ public class TimeTableDB {
 	public void Load_TimeTable(Element racine) {
 		String id, bookid, login, datedebut, datefin, roomid;
 		Element racine2 = racine.getChild("TimeTables");
+		// on récupère dans une liste l'ensemble des "TimeTable"
 		List<Element> timetable = racine2.getChildren("TimeTable");
 		int i;
+		// on parcourt la liste en récupérant les IDs et l'ensemble des réservations et on crée un emploi du temps avec ces propriétés
 		for (i = 0; i < timetable.size(); i++) {
 			id = timetable.get(i).getChild("GroupId").getText();
 			this.addTimeTable(Integer.parseInt(id));
 			Element racinebook = timetable.get(i).getChild("Books");
+			// on récupère dans une liste l'ensemble des "Book"
 			List<Element> book = racinebook.getChildren("Book");
 			int j;
+			// on parcourt la liste en récupérant les IDs, login, dates et salle de la réservation et on crée la réservation avec ces propritétés dans l'emploi du temps en question
 			for (j = 0; j < book.size(); j++) {
 				List<Element> book1 = book.get(j).getChildren();
 				bookid = book1.get(0).getText();
@@ -264,7 +280,7 @@ public class TimeTableDB {
 	 */
 	public Date StringToDate(String date) {
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		Date fdate = null; // pas sur...
+		Date fdate = null;
 		try {
 			fdate = formatter.parse(date);
 			return fdate;
@@ -307,7 +323,6 @@ public class TimeTableDB {
 	 * 		Faux sinon
 	 */
 	public boolean addRoom(int roomID, int capacity) {
-		System.out.println("Entrée addroom");
 		if (RoomList.containsKey(roomID)) {
 			return false;
 		}
@@ -386,6 +401,7 @@ public class TimeTableDB {
 	 * Supprime un emploi du temps	
 	 *  
 	 * @param timeTableID
+	 * 		numéro d'identification de l'emploi du temps à supprimer
 	 * 
 	 * @return	
 	 * 		Vrai si supprimé
@@ -493,7 +509,6 @@ public class TimeTableDB {
 	public int getBookingMaxID(int timeTableID) {
 		int max;
 		max = TimeTableList.get(timeTableID).getBookMaxId();
-		System.out.println("Max :" + max);
 		return max;
 
 	}

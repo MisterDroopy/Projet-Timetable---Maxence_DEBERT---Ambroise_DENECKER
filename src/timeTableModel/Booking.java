@@ -13,15 +13,42 @@ import java.util.Date;
  */
 public class Booking {
 
+	/**
+	 * Nom du professeur
+	 */
 	protected String login = "";
+	
+	/**
+	 * Numéro d'identification de la réservation
+	 */
 	protected int ID_Books = 0;
+	/**
+	 * Numéro d'identification de la salle
+	 */
 	protected int ID_Room = 0;
+	/**
+	 * Date de début de la réservation
+	 */
 	protected Date date_fin = new Date();
+	/**
+	 * Date de fin de la réservation
+	 */
 	protected Date date_debut = new Date();
 
 
 	/**
-	 * The constructor.
+	 * Le constructeur créant la réservation en initialisant toutes les informations
+	 * 
+	 * @param ID_Books
+	 * 		le numéro d'identification de la réservation
+	 * @param ID_Room
+	 * 		le numéro d'identification de la salle
+	 * @param login
+	 * 		le nom du professeur
+	 * @param date_debut
+	 * 		la date de début de la réservation
+	 * @param date_fin
+	 * 		la date de fin de la réservation
 	 */
 	public Booking(int ID_Books, int ID_Room, String login, Date date_debut, Date date_fin) {
 		this.ID_Books = ID_Books;
@@ -32,14 +59,18 @@ public class Booking {
 	}
 
 	/**
-	 * Description of the method getTeacherLogin.
+	 * Retourne le nom du professeur
+	 * 
+	 * @return le login du professeur
 	 */
 	public String getTeacherLogin() {
 		return this.login;
 	}
 
 	/**
-	 * Description of the method getRoom.
+	 * Retourne le numéro d'identification de salle réservée
+	 * 
+	 * @return le numéro de salle de la réservation
 	 */
 	public int getRoom() {
 		return this.ID_Room;
@@ -47,9 +78,9 @@ public class Booking {
 
 
 	/**
-	 * Returns ID_Books.
+	 * Retourne le numéro d'identification de la réservation
 	 * 
-	 * @return ID_Books
+	 * @return le numéro d'identication de la réservation
 	 */
 	public int getID_Books() {
 		return this.ID_Books;
@@ -57,9 +88,9 @@ public class Booking {
 
 	
 	/**
-	 * Returns date_fin.
+	 * Retourne la date de fin de la réservation
 	 * 
-	 * @return date_fin
+	 * @return la date de fin de la réservation
 	 */
 	public Date getDate_fin() {
 		return this.date_fin;
@@ -67,9 +98,9 @@ public class Booking {
 
 
 	/**
-	 * Returns date_debut.
+	 * Retourne la date de début de la réservation
 	 * 
-	 * @return date_debut
+	 * @return la date de début de la réservation
 	 */
 	public Date getDate_debut() {
 		return this.date_debut;

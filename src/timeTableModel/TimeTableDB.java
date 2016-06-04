@@ -44,18 +44,32 @@ public class TimeTableDB {
 	 */
 	private String file;
 
+	/**
+	 * Couple de numéro d'identification associé à l'objet emploi du temps 
+	 */
 	Map<Integer, TimeTable> TimeTableList = new HashMap<>();
+	
+	/**
+	 * Couple de numéro de salle et de l'objet
+	 */
 	Map<Integer, Room> RoomList = new HashMap<>();
 
+	/**
+	 * Déclaration du document, c'est à la base de données de l'emploi du temps
+	 */
 	static org.jdom2.Document document;
+	
+	/**
+	 * Racine du document
+	 */
 	static Element racine;
 
+	
 	/**
-	 * 
-	 * Constructeur de TimeTableDB.
+	 * Le constructeur du controller de la base de donnée de l'emploi du temps
 	 * 
 	 * @param file
-	 *            Le nom du fichier qui contient la base de donnÃ©es.
+	 *  	Le nom du fichier qui contient la base de donnÃ©es.
 	 */
 	public TimeTableDB(String file) {
 		// TODO Ã€ modifier
@@ -76,7 +90,7 @@ public class TimeTableDB {
 	 * Setter de file
 	 * 
 	 * @param file
-	 *            Le nom du fichier qui contient la base de donnÃ©es.
+	 * 		Le nom du fichier qui contient la base de donnÃ©es.
 	 */
 	public void setFile(String file) {
 		this.file = file;
@@ -84,7 +98,10 @@ public class TimeTableDB {
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////
 	/**
-	 * Description of the method saveDB.
+	 * Sauvegarde les données des objets dans la base de données
+	 * 
+	 * @return 
+	 * 		A COMPLETER
 	 */
 	public boolean saveDB() {
 		System.out.println("Entrée saveDB");
@@ -161,8 +178,12 @@ public class TimeTableDB {
 		return true;
 	}
 
+	
 	/**
-	 * Description of the method loadDB.
+	 * Charge les objets à partir des valeurs dans la base de données
+	 * 
+	 * @return
+	 * 		A COMPLETER
 	 */
 	public boolean loadDB() {
 		System.out.println("Entrée load");
@@ -178,6 +199,13 @@ public class TimeTableDB {
 		return true;
 	}
 
+	
+	/**
+	 * Charge les données dans les objets correspondant aux salles
+	 * 
+	 * @param racine
+	 * 		Racine de la base de données
+	 */
 	public void Load_Rooms(Element racine) {
 		String id, capacity;
 		Element racine2 = racine.getChild("Rooms");
@@ -191,6 +219,13 @@ public class TimeTableDB {
 		}
 	}
 
+	
+	/**
+	 * Charge les emplois du temps
+	 * 
+	 * @param racine
+	 * 		Racine de la base de données
+	 */
 	public void Load_TimeTable(Element racine) {
 		String id, bookid, login, datedebut, datefin, roomid;
 		Element racine2 = racine.getChild("TimeTables");
@@ -218,6 +253,15 @@ public class TimeTableDB {
 
 	}
 
+	
+	/**
+	 * Retourne une date en format date à partir d'un format String
+	 * 
+	 * @param date
+	 * 		Date à changer de type
+	 * 
+	 * @return la date en chaine de caractères
+	 */
 	public Date StringToDate(String date) {
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date fdate = null; // pas sur...
@@ -230,6 +274,12 @@ public class TimeTableDB {
 		return fdate;
 	}
 
+	
+	/**
+	 * Renvoie un tableau contenant la liste des identifiants des emplois du temps en chaine de caractères
+	 * 
+	 * @return un tableau contenant la liste des identifiants des emplois du temps en chaine de caractères 
+	 */
 	public String[] timeTableIDToString() {
 		String retour[] = new String[100];
 		int i = 0;
@@ -242,12 +292,19 @@ public class TimeTableDB {
 		}
 		return retour;
 	}
+	
 
 	/**
-	 * Description of the method addRoom.
+	 * Ajoute une salle 
 	 * 
 	 * @param roomID
+	 * 		Numéro de la salle
 	 * @param capacity
+	 * 		Capacité de la salle
+	 * 
+	 * @return	
+	 * 		Vrai si ajouté
+	 * 		Faux sinon
 	 */
 	public boolean addRoom(int roomID, int capacity) {
 		System.out.println("Entrée addroom");
@@ -261,11 +318,17 @@ public class TimeTableDB {
 			return false;
 		}
 	}
+	
 
 	/**
-	 * Description of the method removeRoom.
-	 * 
+	 * Supprime une salle
+	 *  
 	 * @param roomID
+	 * 		Numéro de la salle
+	 * 
+	 * @return	
+	 * 		Vrai si supprimé
+	 * 		Faux sinon
 	 */
 	public boolean removeRoom(int roomID) {
 		if (RoomList.containsKey(roomID)) {
@@ -280,20 +343,31 @@ public class TimeTableDB {
 		}
 	}
 
+	
 	/**
-	 * Description of the method getRoom.
+	 * Renvoie le numéro de la salle
 	 * 
 	 * @param timeTableID
+	 * 		Numéro d'identification de l'emploi du temps
 	 * @param bookID
+	 * 		Numéro de la réservation
+	 * 
+	 * @return le numéro de la salle
 	 */
 	public int getRoom(int timeTableID, int bookID) {
 		return TimeTableList.get(timeTableID).getRoom(bookID);
 	}
 
+	
 	/**
-	 * Description of the method addTimeTable.
+	 * Ajoute un emploi du temps
 	 * 
 	 * @param TimeTableID
+	 * 		Numéro d'identification de l'emploi du temps
+	 * 
+	 * @return 
+	 * 		Vrai si ajouté
+	 * 		Faux sinon
 	 */
 	public boolean addTimeTable(int TimeTableID) {
 		if (TimeTableList.containsKey(TimeTableID)) {
@@ -307,10 +381,15 @@ public class TimeTableDB {
 		}
 	}
 
+	
 	/**
-	 * Description of the method removeTimeTableID.
-	 * 
+	 * Supprime un emploi du temps	
+	 *  
 	 * @param timeTableID
+	 * 
+	 * @return	
+	 * 		Vrai si supprimé
+	 * 		Faux sinon
 	 */
 	public boolean removeTimeTableID(int timeTableID) {
 		if (TimeTableList.containsKey(timeTableID)) {
@@ -325,44 +404,69 @@ public class TimeTableDB {
 		}
 	}
 
+	
 	/**
-	 * Description of the method addBooking.
-	 * 
+	 * Ajoute une réservation
+	 *  
 	 * @param tableTimeID
+	 * 		Numéro de l'emploi du temps
 	 * @param bookID
+	 * 		Numéro de la réservation
 	 * @param login
+	 * 		Nom du professeur
 	 * @param dateBegin
+	 * 		Date de début
 	 * @param dateEnd
+	 * 		Date de fin
 	 * @param roomID
+	 * 		Numéro de la salle
+	 * 
+	 * @return	
+	 * 		Vrai si ajouté
+	 * 		Faux sinon
 	 */
 	public boolean addBooking(int tableTimeID, int bookID, String login, Date dateBegin, Date dateEnd, int roomID) {
 		return TimeTableList.get(tableTimeID).addBooking(bookID, login, dateBegin, dateEnd, roomID) && this.saveDB();
 	}
 
+	
 	/**
-	 * Description of the method getBookingsDate.
+	 * Remplie les Hashtable de couple de numéro de réservation et date
 	 * 
 	 * @param timeTableID
+	 * 		Numéro d'identification d'emploi du temps
 	 * @param dateBegin
+	 * 		Hashtable de couple numéro de réservation et date de début
 	 * @param dateEnd
+	 * 		Hashtable de couple numéro de réservation et date de fin
 	 */
 	public void getBookingsDate(int timeTableID, Hashtable<Integer, Date> dateBegin, Hashtable<Integer, Date> dateEnd) {
 		TimeTableList.get(timeTableID).getDateBegin(dateBegin);
 		TimeTableList.get(timeTableID).getDateEnd(dateEnd);
 	}
 
+	
 	/**
-	 * Description of the method removeBook.
+	 * Supprime une réservation
 	 * 
 	 * @param timeTableID
+	 * 		Numéro d'identification de l'emploi du temps
 	 * @param bookID
+	 * 		Numéro de réservation
+	 * 
+	 * @return 
+	 * 		Vrai si supprimé
+	 * 		Faux sinon
 	 */
 	public boolean removeBook(int timeTableID, int bookID) {
 		return TimeTableList.get(timeTableID).removeBook(bookID) && this.saveDB();
 	}
 
+	
 	/**
-	 * Description of the method roomsToString.
+	 * Renvoie un tableau contenant la liste des numéro des salles en chaine de caractères
+	 * 
+	 * @return un tableau contenant la liste des numéro des salles en chaine de caractères
 	 */
 	public String[] roomsToString() {
 		String retour[] = new String[100];
@@ -377,10 +481,14 @@ public class TimeTableDB {
 		return retour;
 	}
 
+	
 	/**
-	 * Description of the method getBookingMaxID.
+	 * Retourne le numéro de la réservation le plus élevé
 	 * 
 	 * @param timeTableID
+	 * 		Numéro d'identification de l'emploi du temps
+	 * 
+	 * @return le numéro de la réservation maximum
 	 */
 	public int getBookingMaxID(int timeTableID) {
 		int max;
@@ -390,10 +498,14 @@ public class TimeTableDB {
 
 	}
 
+
 	/**
-	 * Description of the method booksIDToString.
+	 * Renvoie un tableau de numéros de réservation de l'emploi du temps en chaine de caractères
 	 * 
 	 * @param timeTableID
+	 * 		Numéro d'identification de l'emploi du temps
+	 * 
+	 * @return un tableau de numéros de réservation en chaine de caractères
 	 */
 	public String[] booksIDToString(int timeTableID) {
 		String retour[];
@@ -401,9 +513,12 @@ public class TimeTableDB {
 		return retour;
 
 	}
+	
 
 	/**
-	 * Description of the method roomsIDToString.
+	 * Renvoi un tableau des numéros des salles en chaine de caractères
+	 *
+	 * @return un tableau des numéros des salles en chaine de caractères
 	 */
 	public String[] roomsIDToString() {
 		String retour[] = new String[100];
@@ -418,11 +533,16 @@ public class TimeTableDB {
 		return retour;
 	}
 
+
 	/**
-	 * Description of the method getTeacherLogin.
+	 * Fonction permettant de récupérer le login du professeur qui a réalisé la réservation dont l'identifiant est bookId dans l'emploi du temps dont l'identifiant est timeTableId.
 	 * 
 	 * @param timeTableID
+	 * 		Numéro d'identification de l'emploi du temps
 	 * @param bookID
+	 * 		Numéro de la réservation
+	 * 
+	 * @return le nom du professeur
 	 */
 	public String getTeacherLogin(int timeTableID, int bookID) {
 		String login = TimeTableList.get(timeTableID).getTeachLogin(bookID);

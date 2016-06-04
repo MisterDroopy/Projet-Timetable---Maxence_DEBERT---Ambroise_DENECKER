@@ -15,18 +15,23 @@ package timeTableModel;
  */
 public class Room {
 	/**
-	 * Description of the property ID_Room.
+	 * Numéro d'identification de la salle
 	 */
 	protected int ID_Room = 0;
 
 	/**
-	 * Description of the property capacity.
+	 * Capacité de la salle
 	 */
 	protected int capacity = 0;
 
 
 	/**
-	 * The constructor.
+	 * Constructeur de la salle créant la salle associé à une capacité.
+	 * 
+	 * @param ID_Rooom
+	 * 		Numéro de d'identification de la salle
+	 * @param capacity
+	 * 		Capacité de la salle
 	 */
 	public Room(int ID_Room, int capacity) {
 		this.ID_Room = ID_Room;
@@ -34,7 +39,9 @@ public class Room {
 	}
 
 	/**
-	 * Description of the method infoToString.
+	 * Renvoie le numéro d'identification et la capacité de la salle dans une chaine de caractère
+	 * 
+	 * @return "Numéro d'identification de la salle" + "Capacity" en chaine de caractère
 	 */
 	public String infoToString() {
 		return (String.valueOf(this.ID_Room) + " : " + String.valueOf(this.capacity));
@@ -42,9 +49,9 @@ public class Room {
 
 	
 	/**
-	 * Returns ID_Room.
+	 * Retourne le numéro d'identification de la salle
 	 * 
-	 * @return ID_Room
+	 * @return le numéro d'identification de la salle
 	 */
 	public int getID_Room() {
 		return this.ID_Room;
@@ -53,14 +60,19 @@ public class Room {
 	
 	
 	/**
-	 * Returns capacity.
+	 * Retourne la capacité de la salle
 	 * 
-	 * @return capacity
+	 * @return la capacité de la salle 
 	 */
 	public int getCapacity() {
 		return this.capacity;
 	}
 
+	/**
+	 * Renvoie la capacité de la salle dans une chaine de caractère
+	 * 
+	 * @return "Capacity" en chaine de caractère
+	 */
 	public String getCapacityToString() {
 		return String.valueOf(this.capacity);
 	}

@@ -8,9 +8,10 @@ package timeTableModel;
 // End of user code
 
 /**
- * Description of Room.
+ * Cette classe permet de gérer les salles.
  * 
- * @author ambroise
+ * @author Maxence Debert - Ambroise Denecker
+ * @version 06/2016
  */
 public class Room {
 	/**
@@ -23,9 +24,6 @@ public class Room {
 	 */
 	protected int capacity = 0;
 
-	// Start of user code (user defined attributes for Room)
-
-	// End of user code
 
 	/**
 	 * The constructor.
@@ -39,52 +37,32 @@ public class Room {
 	 * Description of the method infoToString.
 	 */
 	public String infoToString() {
-		return (String.valueOf(this.ID_Room)+ " : "+ String.valueOf(this.capacity));
+		return (String.valueOf(this.ID_Room) + " : " + String.valueOf(this.capacity));
 	}
 
-	/**
-	 * Description of the method roomIDToString.
-	 */
-	/*public String roomIDToString() {
-		return String.valueOf(this.ID_Room);
-	}
 	
-	* Inutile car juste besoin de récupérer les ID, à prendre directement dans la HashMap dans DB
-	*/ 
-
-	// Start of user code (user defined methods for Room)
-
-	// End of user code
 	/**
 	 * Returns ID_Room.
-	 * @return ID_Room 
+	 * 
+	 * @return ID_Room
 	 */
 	public int getID_Room() {
 		return this.ID_Room;
 	}
 
-	/**
-	 * Sets a value to attribute ID_Room. 
-	 * @param newID_Room 
-	 */
-	public void setID_Room(int newID_Room) {
-		this.ID_Room = newID_Room;
-	}
-
+	
+	
 	/**
 	 * Returns capacity.
-	 * @return capacity 
+	 * 
+	 * @return capacity
 	 */
 	public int getCapacity() {
 		return this.capacity;
 	}
 
-	/**
-	 * Sets a value to attribute capacity. 
-	 * @param newCapacity 
-	 */
-	public void setCapacity(int newCapacity) {
-		this.capacity = newCapacity;
+	public String getCapacityToString() {
+		return String.valueOf(this.capacity);
 	}
 
 }

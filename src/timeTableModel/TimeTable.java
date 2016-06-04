@@ -3,6 +3,7 @@
  *******************************************************************************/
 package timeTableModel;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -10,21 +11,19 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-// Start of user code (user defined imports)
-
-// End of user code
 
 /**
- * Description of TimeTable.
+ * Cette classe gère les emplois du temps des différents groupes.
  * 
- * @author ambroise
+ * @author Maxence Debert - Ambroise Denecker
+ * @version 06/2016
  */
 public class TimeTable {
 	/**
 	 * Description of the property groupId.
 	 */
-	
-	protected int ID_Timetable =0;
+
+	protected int ID_Timetable = 0;
 	Map<Integer, Booking> BookingList = new HashMap<>();
 
 	/**
@@ -34,119 +33,99 @@ public class TimeTable {
 		this.ID_Timetable = ID_Timetable;
 	}
 
+	public int getRoom(int bookID) {
+		int id;
+		id = BookingList.get(bookID).getRoom();
+		return id;
+	}
 
-	public int getRoom(int bookID){
-	int id;
-	id=BookingList.get(bookID).getRoom();
-	return id;	
-	}
-	
-	public boolean addBooking(int bookID, String login, Date dateBegin, Date dateEnd, int roomID){
+	public boolean addBooking(int bookID, String login, Date dateBegin, Date dateEnd, int roomID) {
+		BookingList.put(bookID, new Booking(bookID, roomID, login, dateBegin, dateEnd));
+		return true;
 		
-		//if(BookingList.containsKey(bookID)){
-			
-			//return false;
-		//}
-		BookingList.put(bookID, new Booking(bookID,roomID,login, dateBegin, dateEnd));
-//		if(BookingList.containsKey(bookID)){
-//			
-			return true;
-//		}
-//		else {
-//			return false;
-//		}
-//		
 	}
-	
-	public void getDateBegin(Hashtable<Integer, Date> dateBegin){
-		Set<Integer> listKeys=BookingList.keySet();
-		Iterator<Integer> iterateur= listKeys.iterator();
-		while(iterateur.hasNext())
-		{
-			int key= iterateur.next();
-			dateBegin.put(key, BookingList.get(key).getDate_debut());		
+
+	public void getDateBegin(Hashtable<Integer, Date> dateBegin) {
+		Set<Integer> listKeys = BookingList.keySet();
+		Iterator<Integer> iterateur = listKeys.iterator();
+		while (iterateur.hasNext()) {
+			int key = iterateur.next();
+			dateBegin.put(key, BookingList.get(key).getDate_debut());
 		}
 	}
-	
-	public void getDateEnd(Hashtable<Integer, Date> dateEnd){
-		Set<Integer> listKeys=BookingList.keySet();
-		Iterator<Integer> iterateur= listKeys.iterator();
-		while(iterateur.hasNext())
-		{
-			int key= iterateur.next();
-			dateEnd.put(key, BookingList.get(key).getDate_fin());		
+
+	public void getDateEnd(Hashtable<Integer, Date> dateEnd) {
+		Set<Integer> listKeys = BookingList.keySet();
+		Iterator<Integer> iterateur = listKeys.iterator();
+		while (iterateur.hasNext()) {
+			int key = iterateur.next();
+			dateEnd.put(key, BookingList.get(key).getDate_fin());
 		}
 	}
-	
-	public boolean removeBook(int bookID){
-		if(BookingList.containsKey(bookID)){
-			
-			BookingList.remove(bookID);	
-			if(BookingList.containsKey(bookID)){
+
+	public boolean removeBook(int bookID) {
+		if (BookingList.containsKey(bookID)) {
+
+			BookingList.remove(bookID);
+			if (BookingList.containsKey(bookID)) {
 				return false;
-			}
-			else {
+			} else {
 				return true;
 			}
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
-	
-	public int getBookMaxId(){
-		int max=0;
-		
-		Set<Integer> listKeys=BookingList.keySet();
-		Iterator<Integer> iterateur= listKeys.iterator();
-		while(iterateur.hasNext())
-		{
-			int key= iterateur.next();
-			if(key>max){
-				max=key;
-			}		
-		}
-		
-		return max+1;
-	}
-	
-	public String[] booksIDString(){
-		String retour[]=new String[100]; int i=0;
-		Set<Integer> listKeys=BookingList.keySet();
+
+	public int getBookMaxId() {
+		int max = 0;
+		Set<Integer> listKeys = BookingList.keySet();
 		Iterator<Integer> iterateur = listKeys.iterator();
-		while(iterateur.hasNext())
-		{
-			int key= iterateur.next(); // passe direct au suivant non ?
-			retour[i]=String.valueOf(key);
-			i=i+1;
+		while (iterateur.hasNext()) {
+			int key = iterateur.next();
+			if (key > max) {
+				max = key;
+			}
+		}
+
+		return max + 1;
+	}
+
+	public String[] booksIDString() {
+		String retour[] = new String[100];
+		int i = 0;
+		Set<Integer> listKeys = BookingList.keySet();
+		Iterator<Integer> iterateur = listKeys.iterator();
+		while (iterateur.hasNext()) {
+			int key = iterateur.next();
+			retour[i] = String.valueOf(key);
+			i = i + 1;
 		}
 		return retour;
-		
+
 	}
-	
-	public String getTeachLogin(int bookId){
+
+	public String getTeachLogin(int bookId) {
 		String login;
-		login= BookingList.get(bookId).getTeacherLogin();
-		
+		login = BookingList.get(bookId).getTeacherLogin();
+
 		return login;
 	}
-	
-	public String getDateDebu (int bookId){
-		return String.valueOf(BookingList.get(bookId).getDate_debut());
+
+	public String getDateDebu(int bookId) {
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		return formatter.format(BookingList.get(bookId).getDate_debut());
+
 	}
-	
-	public String getDateFi (int bookId){
-		return String.valueOf(BookingList.get(bookId).getDate_fin());
+
+	public String getDateFi(int bookId) {
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		return formatter.format(BookingList.get(bookId).getDate_fin());
 	}
-	
+
 	public Map<Integer, Booking> bookingTable() {
 		return BookingList;
-		
-	}	
-/*	public void getTeacherID (int BookID){
-		((Booking)BookID).getTeacherLogin();
-	}*/
-	
-	
 
+	}
+	
 }

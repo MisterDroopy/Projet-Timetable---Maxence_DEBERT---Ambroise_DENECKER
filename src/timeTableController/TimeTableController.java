@@ -115,8 +115,7 @@ public class TimeTableController implements ITimeTableController {
 
 	@Override
 	public boolean saveDB() {
-		// TODO Auto-generated method stub
-		return false;
+		return tTDB.saveDB();// TODO Auto-generated method stub
 	}
 
 	@Override

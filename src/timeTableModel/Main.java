@@ -10,8 +10,8 @@ import timeTableController.TimeTableController;
  * Cette classe permet de tester les fonctions du contrôleur d'emplois du temps.
  * Elle crée une base de données de 3 salles et de 4 réservations d'emplois du temps et les sauvegarde dans le fichier "timeTableDB.xml". 
  * 
- * @author Jose Mennesson (Mettre à jour)
- * @version 04/2016 (Mettre à jour)
+ * @author Jose Mennesson
+ * @version 04/2016 
  * 
  */
 

@@ -1,36 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TimeTablesDB>
-  <Rooms>
-    <Room>
-      <RoomId>3</RoomId>
-      <Capacity>150</Capacity>
-    </Room>
-    <Room>
-      <RoomId>2</RoomId>
-      <Capacity>100</Capacity>
-    </Room>
-    <Room>
-      <RoomId>1</RoomId>
-      <Capacity>50</Capacity>
-    </Room>
-  </Rooms>
+<TImeTablesDB>
   <TimeTables>
     <TimeTable>
       <GroupId>1</GroupId>
       <Books>
         <Book>
-          <BookingId>3</BookingId>
-          <Login>MF</Login>
-          <DateBegin>08/04/2016 16:00:00</DateBegin>
-          <DateEnd>08/04/2016 18:00:00</DateEnd>
-          <RoomId>3</RoomId>
-        </Book>
-        <Book>
-          <BookingId>2</BookingId>
+          <BookingId>0</BookingId>
           <Login>GS</Login>
-          <DateBegin>07/04/2016 08:15:00</DateBegin>
-          <DateEnd>07/04/2016 11:45:00</DateEnd>
-          <RoomId>2</RoomId>
+          <DateBegin>06/04/2016 08:00:00</DateBegin>
+          <DateEnd>06/04/2016 10:00:00</DateEnd>
+          <RoomId>1</RoomId>
         </Book>
         <Book>
           <BookingId>1</BookingId>
@@ -40,13 +19,83 @@
           <RoomId>1</RoomId>
         </Book>
         <Book>
-          <BookingId>0</BookingId>
+          <BookingId>2</BookingId>
           <Login>GS</Login>
-          <DateBegin>06/04/2016 08:00:00</DateBegin>
-          <DateEnd>06/04/2016 10:00:00</DateEnd>
+          <DateBegin>07/04/2016 08:15:00</DateBegin>
+          <DateEnd>07/04/2016 11:45:00</DateEnd>
+          <RoomId>2</RoomId>
+        </Book>
+        <Book>
+          <BookingId>3</BookingId>
+          <Login>MF</Login>
+          <DateBegin>08/04/2016 16:00:00</DateBegin>
+          <DateEnd>08/04/2016 18:00:00</DateEnd>
+          <RoomId>3</RoomId>
+        </Book>
+        <Book>
+          <BookingId>4</BookingId>
+          <Login>adenecker</Login>
+          <DateBegin>01/06/2016 08:00:45</DateBegin>
+          <DateEnd>01/06/2016 10:00:45</DateEnd>
+          <RoomId>1</RoomId>
+        </Book>
+      </Books>
+    </TimeTable>
+    <TimeTable>
+      <GroupId>6</GroupId>
+      <Books>
+        <Book>
+          <BookingId>1</BookingId>
+          <Login>adenecker</Login>
+          <DateBegin>01/06/2016 10:00:41</DateBegin>
+          <DateEnd>01/06/2016 18:00:41</DateEnd>
+          <RoomId>3</RoomId>
+        </Book>
+        <Book>
+          <BookingId>2</BookingId>
+          <Login>adenecker</Login>
+          <DateBegin>02/06/2016 08:00:25</DateBegin>
+          <DateEnd>02/06/2016 10:00:25</DateEnd>
+          <RoomId>1</RoomId>
+        </Book>
+        <Book>
+          <BookingId>3</BookingId>
+          <Login>adenecker</Login>
+          <DateBegin>31/05/2016 08:10:40</DateBegin>
+          <DateEnd>31/05/2016 17:20:40</DateEnd>
+          <RoomId>5</RoomId>
+        </Book>
+      </Books>
+    </TimeTable>
+    <TimeTable>
+      <GroupId>7</GroupId>
+      <Books>
+        <Book>
+          <BookingId>1</BookingId>
+          <Login>adenecker</Login>
+          <DateBegin>02/06/2016 08:00:40</DateBegin>
+          <DateEnd>02/06/2016 10:00:40</DateEnd>
           <RoomId>1</RoomId>
         </Book>
       </Books>
     </TimeTable>
   </TimeTables>
-</TimeTablesDB>
+  <Rooms>
+    <Room>
+      <RoomId>1</RoomId>
+      <Capacity>50</Capacity>
+    </Room>
+    <Room>
+      <RoomId>2</RoomId>
+      <Capacity>100</Capacity>
+    </Room>
+    <Room>
+      <RoomId>3</RoomId>
+      <Capacity>150</Capacity>
+    </Room>
+    <Room>
+      <RoomId>5</RoomId>
+      <Capacity>42</Capacity>
+    </Room>
+  </Rooms>
+</TImeTablesDB>

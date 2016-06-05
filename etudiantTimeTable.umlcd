@@ -42,6 +42,9 @@
       <stereotypes xmi:id="_mAZJECsiEeaIlcp_Op9tzQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_mAblUCsiEeaIlcp_Op9tzQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_mAczcCsiEeaIlcp_Op9tzQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_Wq_BICspEeaJkqm2uLQhMw" name="LegacyStyledElement">
+        <modelElement href="etudiantTimeTable.uml#_mmYAcCshEeaIlcp_Op9tzQ"/>
+      </stereotypes>
       <visibility xmi:id="_nEanVyshEeaIlcp_Op9tzQ" label="~"/>
       <cardinality xmi:id="_nEanWCshEeaIlcp_Op9tzQ" label="1" max="1" min="1"/>
     </targetRole>
@@ -113,6 +116,9 @@
       <stereotypes xmi:id="_X4RX0CsiEeaIlcp_Op9tzQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_X4T0ECsiEeaIlcp_Op9tzQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_X4UbICsiEeaIlcp_Op9tzQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_WrDSkCspEeaJkqm2uLQhMw" name="LegacyStyledElement">
+        <modelElement href="etudiantTimeTable.uml#_mmf8QishEeaIlcp_Op9tzQ"/>
+      </stereotypes>
       <visibility xmi:id="_nFY3syshEeaIlcp_Op9tzQ" label="~"/>
       <cardinality xmi:id="_nFY3sishEeaIlcp_Op9tzQ" label="1" max="1" min="1"/>
       <qualifierHelper xmi:id="_nFY3sCshEeaIlcp_Op9tzQ">
@@ -188,6 +194,9 @@
     </sourceRole>
     <targetRole xmi:id="_nGC_BishEeaIlcp_Op9tzQ" aggregationKind="NONE" name="document" navigable="true">
       <modelElement href="etudiantTimeTable.uml#_mmi_kishEeaIlcp_Op9tzQ"/>
+      <stereotypes xmi:id="_WrGV4CspEeaJkqm2uLQhMw" name="LegacyStyledElement">
+        <modelElement href="etudiantTimeTable.uml#_mmjmoCshEeaIlcp_Op9tzQ"/>
+      </stereotypes>
       <visibility xmi:id="_nGC_ByshEeaIlcp_Op9tzQ" label="~"/>
       <cardinality xmi:id="_nGC_CCshEeaIlcp_Op9tzQ" label="1" max="1" min="1"/>
     </targetRole>
@@ -205,6 +214,9 @@
     </sourceRole>
     <targetRole xmi:id="_nGENJishEeaIlcp_Op9tzQ" aggregationKind="NONE" name="racine" navigable="true">
       <modelElement href="etudiantTimeTable.uml#_mmjmoSshEeaIlcp_Op9tzQ"/>
+      <stereotypes xmi:id="_WrHkACspEeaJkqm2uLQhMw" name="LegacyStyledElement">
+        <modelElement href="etudiantTimeTable.uml#_mmjmoishEeaIlcp_Op9tzQ"/>
+      </stereotypes>
       <visibility xmi:id="_nGENJyshEeaIlcp_Op9tzQ" label="~"/>
       <cardinality xmi:id="_nGENKCshEeaIlcp_Op9tzQ" label="1" max="1" min="1"/>
     </targetRole>
@@ -688,9 +700,6 @@
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_nFe-UCshEeaIlcp_Op9tzQ" comments="_nFPtwCshEeaIlcp_Op9tzQ" targetConnectionVisual="_nFPtwSshEeaIlcp_Op9tzQ" name="TimeTable" associationsIn="_nFQU0CshEeaIlcp_Op9tzQ" associationsOut="_nFPGsCshEeaIlcp_Op9tzQ">
     <modelElement href="etudiantTimeTable.uml#_mh-BkCshEeaIlcp_Op9tzQ"/>
     <visualProperties xmi:id="_nFe-USshEeaIlcp_Op9tzQ" position="195.0,407.0" size="-1.0,-1.0"/>
-    <stereotypes xmi:id="_UQ7y0CskEeaIlcp_Op9tzQ" name="CakePHPStyledElement">
-      <modelElement href="etudiantTimeTable.uml#_UQ7LwCskEeaIlcp_Op9tzQ"/>
-    </stereotypes>
     <visibility xmi:id="_nFe-UishEeaIlcp_Op9tzQ" label="+"/>
     <attributes xmi:id="_nFe-UyshEeaIlcp_Op9tzQ" defaultValue="0" name="ID_Timetable">
       <modelElement href="etudiantTimeTable.uml#_mmfVMCshEeaIlcp_Op9tzQ"/>
@@ -706,9 +715,9 @@
     </attributes>
     <attributes xmi:id="_nFe-WCshEeaIlcp_Op9tzQ" defaultValue="new HashMap&lt;>()" name="BookingList">
       <modelElement href="etudiantTimeTable.uml#_mmf8QCshEeaIlcp_Op9tzQ"/>
-      <stereotypes xmi:id="_nFe-WSshEeaIlcp_Op9tzQ" name="LegacyStyledElement">
-        <modelElement href="etudiantTimeTable.uml#_mmf8QishEeaIlcp_Op9tzQ"/>
-      </stereotypes>
+      <stereotypes xmi:id="_WrySYCspEeaJkqm2uLQhMw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_WrzggCspEeaJkqm2uLQhMw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_Wr7cUCspEeaJkqm2uLQhMw" name="LegacyStyledElement"/>
       <visibility xmi:id="_nFe-WishEeaIlcp_Op9tzQ" label="~"/>
       <cardinality xmi:id="_nFe-WyshEeaIlcp_Op9tzQ" label="1" max="1" min="1"/>
       <type xmi:id="_nFe-XCshEeaIlcp_Op9tzQ" name="Booking">
@@ -1102,9 +1111,9 @@
     <visibility xmi:id="_nEbOYSshEeaIlcp_Op9tzQ" label="+"/>
     <attributes xmi:id="_nEbOYishEeaIlcp_Op9tzQ" name="tTDB">
       <modelElement href="etudiantTimeTable.uml#_mmXZYCshEeaIlcp_Op9tzQ"/>
-      <stereotypes xmi:id="_nEbOYyshEeaIlcp_Op9tzQ" name="LegacyStyledElement">
-        <modelElement href="etudiantTimeTable.uml#_mmYAcCshEeaIlcp_Op9tzQ"/>
-      </stereotypes>
+      <stereotypes xmi:id="_WrsLwCspEeaJkqm2uLQhMw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_WruA8CspEeaJkqm2uLQhMw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_Wr9RgCspEeaJkqm2uLQhMw" name="LegacyStyledElement"/>
       <visibility xmi:id="_nEbOZCshEeaIlcp_Op9tzQ" label="~"/>
       <cardinality xmi:id="_nEbOZSshEeaIlcp_Op9tzQ" label="1" max="1" min="1"/>
       <type xmi:id="_nEbOZishEeaIlcp_Op9tzQ" name="TimeTableDB">
@@ -1580,6 +1589,9 @@
       <stereotypes xmi:id="_KB2akCsiEeaIlcp_Op9tzQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KB3osCsiEeaIlcp_Op9tzQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KB4PwCsiEeaIlcp_Op9tzQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_Wr0uoCspEeaJkqm2uLQhMw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_Wr2j0CspEeaJkqm2uLQhMw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_Wr-foCspEeaJkqm2uLQhMw" name="LegacyStyledElement"/>
       <visibility xmi:id="_nGENMSshEeaIlcp_Op9tzQ" label="~"/>
       <cardinality xmi:id="_nGENMishEeaIlcp_Op9tzQ" label="1" max="1" min="1"/>
       <type xmi:id="_nGENMyshEeaIlcp_Op9tzQ" name="TimeTable">
@@ -1591,6 +1603,9 @@
       <stereotypes xmi:id="_bpzIsCsiEeaIlcp_Op9tzQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_bpzvwCsiEeaIlcp_Op9tzQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_bp0W0CsiEeaIlcp_Op9tzQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_WruoACspEeaJkqm2uLQhMw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_WrwdMCspEeaJkqm2uLQhMw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_Wr_GsCspEeaJkqm2uLQhMw" name="LegacyStyledElement"/>
       <visibility xmi:id="_nGENNSshEeaIlcp_Op9tzQ" label="~"/>
       <cardinality xmi:id="_nGENNishEeaIlcp_Op9tzQ" label="1" max="1" min="1"/>
       <type xmi:id="_nGENNyshEeaIlcp_Op9tzQ" name="Room">
@@ -1599,9 +1614,9 @@
     </attributes>
     <attributes xmi:id="_nGENOCshEeaIlcp_Op9tzQ" name="document" staticAttribute="true">
       <modelElement href="etudiantTimeTable.uml#_mmi_kishEeaIlcp_Op9tzQ"/>
-      <stereotypes xmi:id="_nGENOSshEeaIlcp_Op9tzQ" name="LegacyStyledElement">
-        <modelElement href="etudiantTimeTable.uml#_mmjmoCshEeaIlcp_Op9tzQ"/>
-      </stereotypes>
+      <stereotypes xmi:id="_Wr3x8CspEeaJkqm2uLQhMw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_Wr4ZACspEeaJkqm2uLQhMw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_Wr_twCspEeaJkqm2uLQhMw" name="LegacyStyledElement"/>
       <visibility xmi:id="_nGENOishEeaIlcp_Op9tzQ" label="~"/>
       <cardinality xmi:id="_nGENOyshEeaIlcp_Op9tzQ" label="1" max="1" min="1"/>
       <type xmi:id="_nGENPCshEeaIlcp_Op9tzQ" name="Document">
@@ -1610,9 +1625,9 @@
     </attributes>
     <attributes xmi:id="_nGENPSshEeaIlcp_Op9tzQ" name="racine" staticAttribute="true">
       <modelElement href="etudiantTimeTable.uml#_mmjmoSshEeaIlcp_Op9tzQ"/>
-      <stereotypes xmi:id="_nGENPishEeaIlcp_Op9tzQ" name="LegacyStyledElement">
-        <modelElement href="etudiantTimeTable.uml#_mmjmoishEeaIlcp_Op9tzQ"/>
-      </stereotypes>
+      <stereotypes xmi:id="_Wr5nICspEeaJkqm2uLQhMw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_Wr6OMCspEeaJkqm2uLQhMw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_WsAU0CspEeaJkqm2uLQhMw" name="LegacyStyledElement"/>
       <visibility xmi:id="_nGENPyshEeaIlcp_Op9tzQ" label="~"/>
       <cardinality xmi:id="_nGENQCshEeaIlcp_Op9tzQ" label="1" max="1" min="1"/>
       <type xmi:id="_nGENQSshEeaIlcp_Op9tzQ" name="Element">

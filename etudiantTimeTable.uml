@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PHPProfile="http:///schemas/PHPProfile/NS/0" xmlns:UMLLabProfile="http:///schemas/UMLLabProfile/NS/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/PHPProfile/NS/0 pathmap://PHP_PROFILES/PHP.profile.uml#PHPProfile-Annotation-PHPProfile http:///schemas/UMLLabProfile/NS/0 pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLLabProfile="http:///schemas/UMLLabProfile/NS/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/UMLLabProfile/NS/0 pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile">
   <uml:Model xmi:id="_l7oaUCshEeaIlcp_Op9tzQ" name="etudiantTimeTable">
     <eAnnotations xmi:id="_mEMgcCshEeaIlcp_Op9tzQ" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_mENukCshEeaIlcp_Op9tzQ" source="codegen">
         <details xmi:id="_mEOVoCshEeaIlcp_Op9tzQ" key="codegenDirectory" value="/edu.telecom.lille.projet.info.etudiantTimeTable/src"/>
-        <details xmi:id="_nCdfgCshEeaIlcp_Op9tzQ" key="AssociatedSourceCode" value="/edu.telecom.lille.projet.info.etudiantTimeTable/src/timeTableController/ITimeTableController.java;706968622/1;/edu.telecom.lille.projet.info.etudiantTimeTable/src/timeTableController/TimeTableController.java;2428834134/1;/edu.telecom.lille.projet.info.etudiantTimeTable/src/timeTableModel/Booking.java;2368673565/1;/edu.telecom.lille.projet.info.etudiantTimeTable/src/timeTableModel/Room.java;3952166153/1;/edu.telecom.lille.projet.info.etudiantTimeTable/src/timeTableModel/TimeTable.java;1451977857/1;/edu.telecom.lille.projet.info.etudiantTimeTable/src/timeTableModel/TimeTableDB.java;3130619898/1;"/>
+        <details xmi:id="_nCdfgCshEeaIlcp_Op9tzQ" key="AssociatedSourceCode" value="/edu.telecom.lille.projet.info.etudiantTimeTable/src/timeTableController/ITimeTableController.java;706968622/1;/edu.telecom.lille.projet.info.etudiantTimeTable/src/timeTableController/TimeTableController.java;167709254/1;/edu.telecom.lille.projet.info.etudiantTimeTable/src/timeTableModel/Booking.java;2368673565/1;/edu.telecom.lille.projet.info.etudiantTimeTable/src/timeTableModel/Room.java;3952166153/1;/edu.telecom.lille.projet.info.etudiantTimeTable/src/timeTableModel/TimeTable.java;1451977857/1;/edu.telecom.lille.projet.info.etudiantTimeTable/src/timeTableModel/TimeTableDB.java;3549380883/1;"/>
       </contents>
     </eAnnotations>
     <elementImport xmi:id="_mesrICshEeaIlcp_Op9tzQ">
@@ -360,7 +360,9 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
           <ownedParameter xmi:id="_mmt-sSshEeaIlcp_Op9tzQ" name="tTfile">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedParameter>
-          <ownedParameter xmi:id="_mmt-sishEeaIlcp_Op9tzQ" type="_mhNMkCshEeaIlcp_Op9tzQ" direction="return"/>
+          <ownedParameter xmi:id="_mmt-sishEeaIlcp_Op9tzQ" type="_mhNMkCshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>TimeTableDB tTDB = new TimeTableDB(tTfile);&#xD;
 		this.tTDB = tTDB;&#xD;
@@ -375,6 +377,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:id="_mmvM0yshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedParameter>
           <language>java</language>
@@ -384,6 +387,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mmvz4CshEeaIlcp_Op9tzQ" name="roomsIdToString" specification="_mhTTMCshEeaIlcp_Op9tzQ">
           <ownedParameter xmi:id="_mmvz4SshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mmvz4ishEeaIlcp_Op9tzQ" value="*"/>
           </ownedParameter>
@@ -394,6 +398,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mmvz4yshEeaIlcp_Op9tzQ" name="roomsToString" specification="_mhUhUishEeaIlcp_Op9tzQ">
           <ownedParameter xmi:id="_mmvz5CshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mmvz5SshEeaIlcp_Op9tzQ" value="*"/>
           </ownedParameter>
@@ -404,6 +409,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mmvz5ishEeaIlcp_Op9tzQ" name="timeTablesIDToString" specification="_mhWWgSshEeaIlcp_Op9tzQ">
           <ownedParameter xmi:id="_mmvz5yshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mmvz6CshEeaIlcp_Op9tzQ" value="*"/>
           </ownedParameter>
@@ -417,6 +423,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:id="_mmwa8ishEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mmwa8yshEeaIlcp_Op9tzQ" value="*"/>
           </ownedParameter>
@@ -432,6 +439,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:id="_mmwa9yshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
           </ownedParameter>
           <language>java</language>
@@ -444,6 +452,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:id="_mmxCAishEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
           </ownedParameter>
           <language>java</language>
@@ -458,6 +467,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:id="_mmxCBishEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <language>java</language>
@@ -469,6 +479,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:id="_mmxCCSshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
           </ownedParameter>
           <language>java</language>
@@ -480,6 +491,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:id="_mmxpEishEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
           </ownedParameter>
           <language>java</language>
@@ -487,22 +499,23 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
 	</body>
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mmxpEyshEeaIlcp_Op9tzQ" name="addBooking" specification="_ml--4CshEeaIlcp_Op9tzQ">
-          <ownedParameter xmi:id="_mmxpFCshEeaIlcp_Op9tzQ" name="timeTableId">
+          <ownedParameter xmi:id="_hHHo0CspEeaJkqm2uLQhMw" direction="return">
+            <name xsi:nil="true"/>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_hHIP4CspEeaJkqm2uLQhMw" name="timeTableId">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
-          <ownedParameter xmi:id="_mmxpFSshEeaIlcp_Op9tzQ" name="bookingId">
+          <ownedParameter xmi:id="_hHIP4SspEeaJkqm2uLQhMw" name="bookingId">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
-          <ownedParameter xmi:id="_mmxpFishEeaIlcp_Op9tzQ" name="login">
+          <ownedParameter xmi:id="_hHIP4ispEeaJkqm2uLQhMw" name="login">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedParameter>
-          <ownedParameter xmi:id="_mmxpFyshEeaIlcp_Op9tzQ" name="dateBegin" type="_mlJ4cCshEeaIlcp_Op9tzQ"/>
-          <ownedParameter xmi:id="_mmxpGCshEeaIlcp_Op9tzQ" name="dateEnd" type="_mlJ4cCshEeaIlcp_Op9tzQ"/>
-          <ownedParameter xmi:id="_mmxpGSshEeaIlcp_Op9tzQ" name="roomId">
+          <ownedParameter xmi:id="_hHIP4yspEeaJkqm2uLQhMw" name="dateBegin" type="_mlJ4cCshEeaIlcp_Op9tzQ"/>
+          <ownedParameter xmi:id="_hHIP5CspEeaJkqm2uLQhMw" name="dateEnd" type="_mlJ4cCshEeaIlcp_Op9tzQ"/>
+          <ownedParameter xmi:id="_hHIP5SspEeaJkqm2uLQhMw" name="roomId">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-          </ownedParameter>
-          <ownedParameter xmi:id="_mmxpGishEeaIlcp_Op9tzQ" direction="return">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
           </ownedParameter>
           <language>java</language>
           <body>return tTDB.addBooking(timeTableId, bookingId, login, dateBegin, dateEnd, roomId);&#xD;
@@ -526,6 +539,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:id="_mmyQJyshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
           </ownedParameter>
           <language>java</language>
@@ -537,6 +551,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:id="_mmyQKishEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <language>java</language>
@@ -546,14 +561,16 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mmy3MCshEeaIlcp_Op9tzQ" name="saveDB" specification="_mhoqYCshEeaIlcp_Op9tzQ">
           <ownedParameter xmi:id="_mmy3MSshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
           </ownedParameter>
           <language>java</language>
-          <body>return tTDB.saveDB();// TODO Auto-generated method stub&#xD;
+          <body>return tTDB.saveDB();&#xD;
 	</body>
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mmy3MishEeaIlcp_Op9tzQ" name="loadDB" specification="_mhp4gishEeaIlcp_Op9tzQ">
           <ownedParameter xmi:id="_mmy3MyshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
           </ownedParameter>
           <language>java</language>
@@ -755,7 +772,9 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
           </ownedParameter>
           <ownedParameter xmi:id="_mmzeRCshEeaIlcp_Op9tzQ" name="date_debut" type="_mlJ4cCshEeaIlcp_Op9tzQ"/>
           <ownedParameter xmi:id="_mmzeRSshEeaIlcp_Op9tzQ" name="date_fin" type="_mlJ4cCshEeaIlcp_Op9tzQ"/>
-          <ownedParameter xmi:id="_mmzeRishEeaIlcp_Op9tzQ" type="_mhwmMCshEeaIlcp_Op9tzQ" direction="return"/>
+          <ownedParameter xmi:id="_mmzeRishEeaIlcp_Op9tzQ" type="_mhwmMCshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>this.ID_Books = ID_Books;&#xD;
 		this.ID_Room = ID_Room;&#xD;
@@ -766,6 +785,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mm0FUCshEeaIlcp_Op9tzQ" name="getTeacherLogin" specification="_mhzCcCshEeaIlcp_Op9tzQ">
           <ownedParameter xmi:id="_mm0FUSshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedParameter>
           <language>java</language>
@@ -774,6 +794,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mm0FUishEeaIlcp_Op9tzQ" name="getRoom" specification="_mhzpgSshEeaIlcp_Op9tzQ">
           <ownedParameter xmi:id="_mm0FUyshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <language>java</language>
@@ -782,6 +803,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mm0FVCshEeaIlcp_Op9tzQ" name="getID_Books" specification="_mh0QkCshEeaIlcp_Op9tzQ">
           <ownedParameter xmi:id="_mm0FVSshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <language>java</language>
@@ -789,13 +811,17 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
 	</body>
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mm0sYCshEeaIlcp_Op9tzQ" name="getDate_fin" specification="_mh03oCshEeaIlcp_Op9tzQ">
-          <ownedParameter xmi:id="_mm0sYSshEeaIlcp_Op9tzQ" type="_mlJ4cCshEeaIlcp_Op9tzQ" direction="return"/>
+          <ownedParameter xmi:id="_mm0sYSshEeaIlcp_Op9tzQ" type="_mlJ4cCshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>return this.date_fin;&#xD;
 	</body>
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mm0sYishEeaIlcp_Op9tzQ" name="getDate_debut" specification="_mh1esCshEeaIlcp_Op9tzQ">
-          <ownedParameter xmi:id="_mm0sYyshEeaIlcp_Op9tzQ" type="_mlJ4cCshEeaIlcp_Op9tzQ" direction="return"/>
+          <ownedParameter xmi:id="_mm0sYyshEeaIlcp_Op9tzQ" type="_mlJ4cCshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>return this.date_debut;&#xD;
 	</body>
@@ -900,7 +926,9 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
           <ownedParameter xmi:id="_mm1TcishEeaIlcp_Op9tzQ" name="capacity">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
-          <ownedParameter xmi:id="_mm1TcyshEeaIlcp_Op9tzQ" type="_mh6XMCshEeaIlcp_Op9tzQ" direction="return"/>
+          <ownedParameter xmi:id="_mm1TcyshEeaIlcp_Op9tzQ" type="_mh6XMCshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>this.ID_Room = ID_Room;&#xD;
 		this.capacity = capacity;&#xD;
@@ -908,6 +936,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mm1TdCshEeaIlcp_Op9tzQ" name="infoToString" specification="_mh8MYCshEeaIlcp_Op9tzQ">
           <ownedParameter xmi:id="_mm1TdSshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedParameter>
           <language>java</language>
@@ -916,6 +945,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mm1TdishEeaIlcp_Op9tzQ" name="getID_Room" specification="_mh8MYishEeaIlcp_Op9tzQ">
           <ownedParameter xmi:id="_mm1TdyshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <language>java</language>
@@ -924,6 +954,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mm16gCshEeaIlcp_Op9tzQ" name="getCapacity" specification="_mh8zcSshEeaIlcp_Op9tzQ">
           <ownedParameter xmi:id="_mm16gSshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <language>java</language>
@@ -932,6 +963,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mm16gishEeaIlcp_Op9tzQ" name="getCapacityToString" specification="_mh8zcyshEeaIlcp_Op9tzQ">
           <ownedParameter xmi:id="_mm16gyshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedParameter>
           <language>java</language>
@@ -1022,7 +1054,9 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
           <ownedParameter xmi:id="_mm2hkSshEeaIlcp_Op9tzQ" name="ID_Timetable">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
-          <ownedParameter xmi:id="_mm2hkishEeaIlcp_Op9tzQ" type="_mh-BkCshEeaIlcp_Op9tzQ" direction="return"/>
+          <ownedParameter xmi:id="_mm2hkishEeaIlcp_Op9tzQ" type="_mh-BkCshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>this.ID_Timetable = ID_Timetable;&#xD;
 	</body>
@@ -1032,6 +1066,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:id="_mm2hlSshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <language>java</language>
@@ -1053,6 +1088,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:id="_mm2hnCshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
           </ownedParameter>
           <language>java</language>
@@ -1095,6 +1131,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:id="_mm3vsishEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
           </ownedParameter>
           <language>java</language>
@@ -1114,6 +1151,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mm3vsyshEeaIlcp_Op9tzQ" name="getBookMaxId" specification="_miBr8SshEeaIlcp_Op9tzQ">
           <ownedParameter xmi:id="_mm3vtCshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <language>java</language>
@@ -1131,6 +1169,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mm3vtSshEeaIlcp_Op9tzQ" name="booksIDString" specification="_miCTACshEeaIlcp_Op9tzQ">
           <ownedParameter xmi:id="_mm3vtishEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mm3vtyshEeaIlcp_Op9tzQ" value="*"/>
           </ownedParameter>
@@ -1153,6 +1192,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:id="_mm4WwishEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedParameter>
           <language>java</language>
@@ -1166,6 +1206,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:id="_mm4WxSshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedParameter>
           <language>java</language>
@@ -1179,6 +1220,7 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
           <ownedParameter xmi:id="_mm4WyCshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedParameter>
           <language>java</language>
@@ -1187,7 +1229,9 @@ Elle contient toutes les fonctions de l'interface ITimeTableController que vous 
 	</body>
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mm490CshEeaIlcp_Op9tzQ" name="bookingTable" specification="_miFWUyshEeaIlcp_Op9tzQ">
-          <ownedParameter xmi:id="_mm490SshEeaIlcp_Op9tzQ" type="_mlfPoSshEeaIlcp_Op9tzQ" direction="return"/>
+          <ownedParameter xmi:id="_mm490SshEeaIlcp_Op9tzQ" type="_mlfPoSshEeaIlcp_Op9tzQ" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>return BookingList;&#xD;
 &#xD;
@@ -1415,8 +1459,7 @@ que celle du fichier TimeTableDB.xml.&#xD;
             <name xsi:nil="true"/>
           </ownedParameter>
           <language>java</language>
-          <body>// TODO Ã€ modifier&#xD;
-		super();&#xD;
+          <body>super();&#xD;
 		this.setFile(file);&#xD;
 	</body>
         </ownedBehavior>
@@ -2186,5 +2229,4 @@ que celle du fichier TimeTableDB.xml.&#xD;
   <UMLLabProfile:Reference xmi:id="_mnMf0CshEeaIlcp_Op9tzQ" base_Element="_mnL4wSshEeaIlcp_Op9tzQ"/>
   <UMLLabProfile:Reference xmi:id="_mnMf0yshEeaIlcp_Op9tzQ" base_Element="_mnMf0SshEeaIlcp_Op9tzQ"/>
   <UMLLabProfile:Reference xmi:id="_mnNG4ishEeaIlcp_Op9tzQ" base_Element="_mnNG4CshEeaIlcp_Op9tzQ"/>
-  <PHPProfile:CakePHPStyledElement xmi:id="_UQ7LwCskEeaIlcp_Op9tzQ" base_Element="_mh-BkCshEeaIlcp_Op9tzQ"/>
 </xmi:XMI>

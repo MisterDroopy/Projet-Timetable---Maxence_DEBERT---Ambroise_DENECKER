@@ -15,7 +15,6 @@ import timeTableModel.TimeTableDB;
  * 
  */
 
-//TODO Classe à modifier
 
 public class TimeTableController implements ITimeTableController {
 
@@ -115,7 +114,7 @@ public class TimeTableController implements ITimeTableController {
 
 	@Override
 	public boolean saveDB() {
-		return tTDB.saveDB();// TODO Auto-generated method stub
+		return tTDB.saveDB();
 	}
 
 	@Override

@@ -34,7 +34,7 @@ import java.util.List;
  * 
  */
 
-// TODO Classe Ã  modifier
+
 
 public class TimeTableDB {
 	/**
@@ -55,7 +55,7 @@ public class TimeTableDB {
 	Map<Integer, Room> RoomList = new HashMap<>();
 
 	/**
-	 * Déclaration du document, c'est à la base de données de l'emploi du temps
+	 * Déclaration du document, c'est à dire la base de données de l'emploi du temps
 	 */
 	static org.jdom2.Document document;
 	
@@ -66,13 +66,12 @@ public class TimeTableDB {
 
 	
 	/**
-	 * Le constructeur du controller de la base de donnée de l'emploi du temps
+	 * Le constructeur du gestionnaire de base de données
 	 * 
 	 * @param file
 	 *  	Le nom du fichier qui contient la base de donnÃ©es.
 	 */
 	public TimeTableDB(String file) {
-		// TODO Ã€ modifier
 		super();
 		this.setFile(file);
 	}

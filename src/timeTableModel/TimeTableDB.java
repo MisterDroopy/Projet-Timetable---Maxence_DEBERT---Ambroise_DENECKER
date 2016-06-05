@@ -101,7 +101,8 @@ public class TimeTableDB {
 	 * Sauvegarde les données des objets dans la base de données
 	 * 
 	 * @return 
-	 * 		A COMPLETER
+	 * 		Vrai si la sauvegarde a réussi
+	 * 		Faux si échec
 	 */
 	public boolean saveDB() {
 		//on stocke l'ensemble des IDs de nos différentes tables dans des listes
@@ -193,7 +194,8 @@ public class TimeTableDB {
 	 * Charge les objets à partir des valeurs dans la base de données
 	 * 
 	 * @return
-	 * 		A COMPLETER
+	 * 		Vrai si le chargement a réussi
+	 * 		Faux si échec
 	 */
 	public boolean loadDB() {
 
@@ -204,8 +206,8 @@ public class TimeTableDB {
 			return false;
 		}
 		racine = document.getRootElement();
-		Load_Rooms(racine);
-		Load_TimeTable(racine);
+		load_Rooms(racine);
+		load_TimeTable(racine);
 		return true;
 	}
 
@@ -216,7 +218,7 @@ public class TimeTableDB {
 	 * @param racine
 	 * 		Racine de la base de données
 	 */
-	public void Load_Rooms(Element racine) {
+	public void load_Rooms(Element racine) {
 		String id, capacity;
 		Element racine2 = racine.getChild("Rooms");
 		//on récupère dans une liste l'ensemble des "Room"
@@ -238,7 +240,7 @@ public class TimeTableDB {
 	 * @param racine
 	 * 		Racine de la base de données
 	 */
-	public void Load_TimeTable(Element racine) {
+	public void load_TimeTable(Element racine) {
 		String id, bookid, login, datedebut, datefin, roomid;
 		Element racine2 = racine.getChild("TimeTables");
 		// on récupère dans une liste l'ensemble des "TimeTable"
@@ -260,8 +262,8 @@ public class TimeTableDB {
 				datedebut = book1.get(2).getText();
 				datefin = book1.get(3).getText();
 				roomid = book1.get(4).getText();
-				this.addBooking(Integer.parseInt(id), Integer.parseInt(bookid), login, StringToDate(datedebut),
-						StringToDate(datefin), Integer.parseInt(roomid));
+				this.addBooking(Integer.parseInt(id), Integer.parseInt(bookid), login, stringToDate(datedebut),
+						stringToDate(datefin), Integer.parseInt(roomid));
 
 			}
 
@@ -278,7 +280,7 @@ public class TimeTableDB {
 	 * 
 	 * @return la date en chaine de caractères
 	 */
-	public Date StringToDate(String date) {
+	public Date stringToDate(String date) {
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date fdate = null;
 		try {
